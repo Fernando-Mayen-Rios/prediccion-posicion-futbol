@@ -1,0 +1,273 @@
+﻿id_persona,edad,tiempo_juego,tiempo_codigo,horas_semana,horas_codigo,nivel,posicion,velocidad,resistencia,fuerza,control_balon,regate,pase,definicion,defensa,juego_aereo,vision_juego,reflejos,posicionamiento,n_no_se,duplicado_posible,duplicado_repetida,menor_18,edad_atipica,linea_recta,incoherencia_experiencia
+P001,21,Más de 10 años,4,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista ofensivo,3,4,3,5,4,5,4,3,2,5,1,4,0,0,0,0,0,0,0
+P002,18,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Portero,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,1,0
+P003,46,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,4,4,3,3,3,4,4,3,3,4,4,3,0,0,0,0,0,0,0
+P004,48,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,5,1,3,2,2,3,2,3,2,3,3,3,0,0,0,0,0,0,0
+P005,21,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,4,4,3,3,2,4,3,4,3,4,2,4,0,0,0,0,0,0,0
+P006,22,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,3,3,2,1,2,2,2,3,2,3,3,4,0,0,0,0,0,0,0
+P007,40,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Portero,2,3,3,3,3,2,3,3,3,3,4,3,0,0,0,0,0,0,0
+P008,40,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,2,1,4,3,3,4,4,5,3,3,4,3,0,0,0,0,0,0,0
+P009,20,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,5,1,3,1,1,1,1,4,1,2,2,1,0,0,0,0,0,0,0
+P010,59,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista ofensivo,1,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0
+P011,47,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Portero,4,4,4,4,3,4,4,5,5,4,5,5,0,0,0,0,0,0,0
+P012,43,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,3,3,2,2,3,2,3,2,2,2,2,0,0,0,0,0,0,0
+P013,34,De 3 a 5 años,2,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,3,3,3,2,2,2,2,4,2,2,3,2,0,0,0,0,0,0,0
+P014,49,De 1 a 2 años,1,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,2,2,2,2,2,2,1,3,1,1,2,1,0,0,0,0,0,0,0
+P015,46,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista ofensivo,3,3,3,3,3,4,3,4,3,3,3,3,0,0,0,0,0,0,0
+P016,40,Más de 10 años,4,De 1 a 2 horas,1,Competitivo o semiprofesional,Defensa central,3,4,4,3,3,3,3,5,3,3,3,3,0,0,0,0,0,0,0
+P017,50,De 3 a 5 años,2,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista defensivo,2,2,3,2,2,3,3,3,2,3,3,3,0,0,0,0,0,0,0
+P018,37,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,,,,,,,,,,,,,12,0,0,0,0,0,0
+P019,17,De 3 a 5 años,2,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,3,2,,,4,2,3,2,3,3,3,2,0,0,1,0,0,0
+P020,32,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Extremo,5,4,5,3,3,3,3,5,1,3,4,4,0,0,0,0,0,0,0
+P021,47,Más de 10 años,4,De 1 a 2 horas,1,Amateur en un equipo organizado,Delantero,3,4,3,3,3,3,4,3,4,3,4,3,0,0,0,0,0,0,0
+P022,53,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Mediocampista ofensivo,5,4,3,3,3,4,3,4,3,4,4,4,0,0,0,0,0,0,0
+P023,26,De 6 a 10 años,3,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,3,3,3,2,2,3,3,4,4,3,3,3,0,0,0,0,0,0,0
+P024,48,De 1 a 2 años,1,De 1 a 2 horas,1,Amateur en un equipo organizado,Defensa central,3,3,3,2,2,3,2,3,3,3,4,4,0,0,0,0,0,0,0
+P025,26,De 3 a 5 años,2,De 1 a 2 horas,1,Recreativo (por diversión),Lateral,3,3,3,3,3,4,2,4,3,4,4,4,0,0,0,0,0,0,0
+P026,36,Más de 10 años,4,De 1 a 2 horas,1,Amateur en un equipo organizado,Mediocampista ofensivo,3,3,4,4,3,4,3,4,3,4,4,4,0,0,0,0,0,0,0
+P027,50,Más de 10 años,4,Más de 12 horas,5,Profesional,Mediocampista defensivo,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,1,0
+P028,46,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista ofensivo,3,4,3,5,4,5,4,4,2,5,5,5,0,0,0,0,0,0,0
+P029,46,De 1 a 2 años,1,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,2,2,2,2,3,2,3,2,3,3,2,0,0,0,0,0,0,0
+P030,38,Más de 10 años,4,De 9 a 12 horas,4,Recreativo (por diversión),Delantero,3,3,3,3,3,4,4,1,3,3,3,3,0,0,0,0,0,0,0
+P031,42,Más de 10 años,4,De 1 a 2 horas,1,Amateur en un equipo organizado,Mediocampista ofensivo,3,3,3,4,3,4,4,4,3,4,4,4,0,0,0,0,0,0,0
+P032,48,De 6 a 10 años,3,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,1,0
+P033,16,De 3 a 5 años,2,De 1 a 2 horas,1,Escolar,Lateral,3,3,3,3,2,3,3,3,2,3,3,3,0,0,0,1,0,0,0
+P034,90,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista defensivo,4,3,3,3,,3,1,4,3,4,3,4,1,0,0,0,1,0,0
+P035,49,Más de 10 años,4,"Actualmente, ninguna",0,Amateur en un equipo organizado,Mediocampista defensivo,3,4,3,3,2,4,3,4,3,4,4,3,0,0,0,0,0,0,0
+P036,46,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Delantero,4,4,4,3,3,4,5,3,3,3,4,4,0,0,0,0,0,0,0
+P037,48,De 6 a 10 años,3,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista defensivo,4,4,4,4,4,4,4,4,3,3,4,4,0,0,0,0,0,0,0
+P038,49,Más de 10 años,4,De 1 a 2 horas,1,Amateur en un equipo organizado,Mediocampista defensivo,3,3,3,4,3,4,3,4,3,3,3,4,0,0,0,0,0,0,0
+P039,49,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,3,3,3,3,3,3,3,4,3,4,4,3,0,0,0,0,0,0,0
+P040,14,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Lateral,3,3,4,2,2,4,4,3,2,2,4,3,0,0,0,1,0,0,0
+P041,44,Más de 10 años,4,"Actualmente, ninguna",0,Amateur en un equipo organizado,Mediocampista defensivo,3,3,2,3,3,4,4,4,3,4,3,3,0,0,0,0,0,0,0
+P042,23,De 3 a 5 años,2,De 1 a 2 horas,1,Amateur en un equipo organizado,Delantero,4,3,3,3,3,3,4,2,1,4,3,4,0,0,0,0,0,0,0
+P043,21,De 6 a 10 años,3,"Actualmente, ninguna",0,Amateur en un equipo organizado,Delantero,3,2,2,4,3,4,5,3,5,4,4,3,0,0,0,0,0,0,0
+P044,21,Más de 10 años,4,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista defensivo,4,4,5,4,3,4,3,4,3,5,4,4,0,0,0,0,0,0,0
+P045,54,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Mediocampista defensivo,4,4,4,4,2,4,3,4,4,3,4,4,0,0,0,0,0,0,0
+P046,17,De 6 a 10 años,3,De 3 a 5 horas,2,Amateur en un equipo organizado,Lateral,4,4,3,3,2,3,3,4,3,3,3,3,0,0,0,1,0,0,0
+P047,38,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,4,3,5,4,4,3,5,4,4,4,4,0,0,0,0,0,0,0
+P048,47,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Mediocampista defensivo,4,4,3,3,3,4,3,4,3,4,4,4,0,0,0,0,0,0,0
+P049,48,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Delantero,5,5,5,5,5,5,5,5,3,5,5,5,0,0,0,0,0,0,0
+P050,46,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,3,3,1,3,3,3,2,3,2,3,4,3,0,0,0,0,0,0,0
+P051,39,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista ofensivo,3,3,3,3,3,3,4,4,3,4,3,3,0,0,0,0,0,0,0
+P052,54,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,1,3,2,2,2,2,2,3,2,1,3,3,0,0,0,0,0,0,0
+P053,49,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Defensa central,1,1,3,3,2,3,3,5,3,3,1,2,0,0,0,0,0,0,0
+P054,43,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Portero,2,2,3,3,3,4,3,4,2,3,3,3,0,0,0,0,0,0,0
+P055,50,De 6 a 10 años,3,De 3 a 5 horas,2,Amateur en un equipo organizado,Delantero,3,4,4,3,3,3,4,4,3,4,4,3,0,0,0,0,0,0,0
+P056,15,De 3 a 5 años,2,De 1 a 2 horas,1,Amateur en un equipo organizado,Mediocampista defensivo,4,5,5,5,4,5,3,5,5,5,5,5,0,0,0,1,0,0,0
+P057,48,Más de 10 años,4,De 1 a 2 horas,1,Competitivo o semiprofesional,Portero,3,3,3,3,2,4,3,4,3,3,4,4,0,0,0,0,0,0,0
+P058,49,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,2,2,2,2,2,2,3,2,2,3,2,0,0,0,0,0,0,0
+P059,50,De 3 a 5 años,2,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,3,4,3,2,3,3,4,3,3,4,3,0,0,0,0,0,0,0
+P060,48,Más de 10 años,4,"Actualmente, ninguna",0,Amateur en un equipo organizado,Extremo,4,4,3,4,4,4,4,4,3,3,3,3,0,0,0,0,0,0,0
+P061,49,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,2,3,4,2,5,3,3,4,5,4,4,0,0,0,0,0,0,0
+P062,50,Menos de 1 año,0,"Actualmente, ninguna",0,Amateur en un equipo organizado,Portero,1,2,3,3,3,3,3,3,2,2,3,3,0,0,0,0,0,0,0
+P063,42,Más de 10 años,4,"Actualmente, ninguna",0,Competitivo o semiprofesional,Defensa central,,2,3,4,3,5,3,4,4,4,3,4,1,0,0,0,0,0,0
+P064,44,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Portero,2,4,4,2,1,2,2,3,2,,2,3,1,0,0,0,0,0,0
+P065,24,De 6 a 10 años,3,"Actualmente, ninguna",0,Recreativo (por diversión),Delantero,3,2,3,3,2,3,3,1,3,3,4,3,0,0,0,0,0,0,0
+P066,60,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,1,0
+P067,43,De 6 a 10 años,3,Más de 12 horas,5,Amateur en un equipo organizado,Mediocampista defensivo,4,5,4,4,3,4,3,5,3,3,4,4,0,0,0,0,0,0,0
+P068,21,De 1 a 2 años,1,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista defensivo,3,3,3,4,3,3,4,4,2,4,4,3,0,0,0,0,0,0,0
+P069,31,De 6 a 10 años,3,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,3,3,4,3,3,4,3,3,3,3,3,0,0,0,0,0,0,0
+P070,23,De 3 a 5 años,2,De 1 a 2 horas,1,Recreativo (por diversión),Lateral,5,4,5,4,4,4,3,5,3,5,5,5,0,0,0,0,0,0,0
+P071,21,De 1 a 2 años,1,"Actualmente, ninguna",0,Recreativo (por diversión),Delantero,3,3,4,3,3,4,4,3,3,4,3,3,0,0,0,0,0,0,0
+P072,20,De 6 a 10 años,3,De 3 a 5 horas,2,Competitivo o semiprofesional,Extremo,5,4,4,4,4,4,3,4,4,4,4,4,0,0,0,0,0,0,0
+P073,26,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,2,2,3,2,2,4,2,2,2,5,3,4,0,0,0,0,0,0,0
+P074,44,De 6 a 10 años,3,"Actualmente, ninguna",0,Escolar,Defensa central,4,4,4,3,3,3,3,3,5,3,3,3,0,0,0,0,0,0,0
+P075,21,De 3 a 5 años,2,De 3 a 5 horas,2,Recreativo (por diversión),Defensa central,2,3,2,2,1,1,2,4,3,2,3,2,0,0,0,0,0,0,0
+P076,28,De 6 a 10 años,3,"Actualmente, ninguna",0,Amateur en un equipo organizado,Mediocampista ofensivo,4,1,5,3,2,3,3,4,3,2,3,2,0,0,0,0,0,0,0
+P077,21,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Extremo,5,4,4,4,4,4,4,3,4,4,4,4,0,0,0,0,0,0,0
+P078,17,De 1 a 2 años,1,De 1 a 2 horas,1,Escolar,Extremo,4,4,4,3,3,4,4,4,3,4,4,3,0,0,0,1,0,0,0
+P079,23,Menos de 1 año,0,De 1 a 2 horas,1,Escolar,Mediocampista defensivo,3,3,2,2,3,4,3,3,4,5,4,5,0,0,0,0,0,0,0
+P080,14,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista ofensivo,4,4,3,3,3,4,5,3,4,5,4,3,0,0,0,1,0,0,0
+P081,16,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,2,2,2,2,2,3,1,1,2,3,2,0,1,0,1,0,0,0
+P082,17,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Extremo,4,3,3,3,4,3,3,2,2,3,3,3,0,0,0,1,0,0,0
+P083,18,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Mediocampista ofensivo,3,3,2,2,3,3,2,2,2,3,3,3,0,0,0,0,0,0,0
+P084,19,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,4,3,3,3,3,2,3,3,3,3,3,0,0,0,0,0,0,0
+P085,20,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Portero,2,2,2,2,1,2,1,2,2,2,4,2,0,0,0,0,0,0,0
+P086,21,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Defensa central,2,3,3,2,2,1,1,4,4,2,2,3,0,0,0,0,0,0,0
+P087,22,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista defensivo,3,3,3,3,2,3,2,3,2,3,3,3,0,1,0,0,0,0,0
+P088,21,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Defensa central,2,3,3,2,2,2,1,4,4,2,2,3,0,0,0,0,0,0,0
+P089,39,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Extremo,5,4,3,4,5,4,4,2,2,4,4,4,0,0,0,0,0,0,0
+P090,31,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Extremo,5,4,3,4,5,3,4,2,2,3,4,4,0,0,0,0,0,0,0
+P091,18,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Mediocampista ofensivo,3,3,2,3,3,3,2,2,2,3,3,3,0,0,0,0,0,0,0
+P092,42,De 3 a 5 años,2,De 3 a 5 horas,2,Recreativo (por diversión),Lateral,4,3,3,3,3,3,2,3,3,3,3,3,0,0,0,0,0,0,0
+P093,26,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,2,2,2,1,2,1,3,3,2,2,2,0,0,0,0,0,0,0
+P094,50,Más de 10 años,4,Más de 12 horas,5,Profesional,Mediocampista ofensivo,5,5,5,4,5,5,5,5,5,3,3,5,0,0,0,0,0,0,0
+P095,35,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,5,4,3,3,4,3,4,3,4,3,4,0,0,0,0,0,0,0
+P096,20,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Portero,2,2,3,2,2,3,2,3,3,3,4,3,0,0,0,0,0,0,0
+P097,47,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Extremo,5,5,4,5,5,4,5,3,3,4,4,5,0,0,0,0,0,0,0
+P098,29,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,3,2,2,3,2,3,1,2,3,3,3,0,0,0,0,0,0,0
+P099,59,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Lateral,5,5,4,4,4,5,3,5,4,5,4,5,0,0,0,0,0,0,0
+P100,16,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,2,2,2,2,2,3,1,1,2,3,2,0,1,1,1,0,0,0
+P101,56,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Defensa central,4,5,5,4,3,4,3,5,5,4,4,5,0,0,0,0,0,0,0
+P102,22,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista defensivo,3,3,3,3,2,3,2,3,2,3,3,3,0,1,1,0,0,0,0
+P103,41,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista ofensivo,4,4,3,4,4,5,4,3,3,5,4,5,0,0,0,0,0,0,0
+P104,33,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Defensa central,3,3,4,3,2,3,2,4,4,3,3,3,0,0,0,0,0,0,0
+P105,62,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Extremo,5,5,4,5,5,4,4,3,3,5,4,5,0,0,0,0,0,0,0
+P106,38,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Mediocampista defensivo,4,5,5,4,3,5,3,5,5,5,4,5,0,0,0,0,0,0,0
+P107,27,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Lateral,4,4,3,3,3,3,2,3,3,3,3,4,0,1,0,0,0,0,0
+P108,65,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Portero,3,4,4,3,2,4,2,4,4,4,5,4,0,0,0,0,0,0,0
+P109,37,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Portero,2,3,3,2,1,3,1,4,4,4,5,5,0,0,0,0,0,0,0
+P110,51,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Lateral,5,5,4,4,4,4,3,5,4,4,4,5,0,0,0,0,0,0,0
+P111,40,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Defensa central,3,3,3,2,2,3,1,4,4,3,2,3,0,0,0,0,0,0,0
+P112,58,Más de 10 años,4,Más de 12 horas,5,Profesional,Portero,3,5,4,3,2,5,2,5,5,5,5,5,0,0,0,0,0,0,0
+P113,30,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,3,2,4,2,4,3,4,3,4,0,1,0,0,0,0,0
+P114,55,Más de 10 años,4,Más de 12 horas,5,Profesional,Delantero,5,5,5,5,5,4,5,2,5,5,5,5,0,0,0,0,0,0,0
+P115,36,De 3 a 5 años,2,De 3 a 5 horas,2,Recreativo (por diversión),Delantero,4,3,3,3,4,3,4,1,2,3,3,3,0,0,0,0,0,0,0
+P116,48,Más de 10 años,4,Más de 12 horas,5,Profesional,Defensa central,4,5,5,4,3,5,3,5,5,5,4,5,0,0,0,0,0,0,0
+P117,25,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Mediocampista ofensivo,3,3,2,3,3,3,2,2,2,4,3,3,0,0,0,0,0,0,0
+P118,32,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Mediocampista ofensivo,4,4,3,4,4,5,3,3,2,5,4,5,0,0,0,0,0,0,0
+P119,46,Más de 10 años,4,Más de 12 horas,5,Profesional,Mediocampista ofensivo,5,5,4,5,5,5,4,3,3,5,4,5,0,0,0,0,0,0,0
+P120,44,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista defensivo,3,5,4,4,3,4,3,4,4,4,3,4,0,1,0,0,0,0,0
+P121,49,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Delantero,5,4,5,4,5,3,5,2,4,4,4,5,0,0,0,0,0,0,0
+P122,43,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Delantero,5,4,4,4,3,5,2,4,4,4,4,5,0,0,0,0,0,0,0
+P123,53,Más de 10 años,4,Más de 12 horas,5,Profesional,Mediocampista defensivo,4,4,4,4,3,4,4,4,3,5,4,5,0,0,0,0,0,0,0
+P124,22,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Lateral,3,4,4,3,3,5,3,4,4,5,4,5,0,0,0,0,0,0,0
+P125,22,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,4,3,4,4,3,3,2,3,3,4,4,0,0,0,0,0,0,0
+P126,19,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Portero,2,4,3,3,3,2,3,3,4,3,5,5,0,0,0,0,0,0,0
+P127,21,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Delantero,4,4,4,4,4,3,5,2,3,3,3,3,0,0,0,0,0,0,0
+P128,18,De 1 a 2 años,1,De 1 a 2 horas,1,Escolar,Mediocampista ofensivo,3,3,2,4,3,4,2,2,2,4,3,3,0,0,0,0,0,0,0
+P129,24,Más de 10 años,4,De 3 a 5 horas,2,Competitivo o semiprofesional,Defensa central,3,4,5,3,2,3,2,5,5,3,3,5,0,0,0,0,0,0,0
+P130,17,De 3 a 5 años,2,De 1 a 2 horas,1,Recreativo (por diversión),Extremo,5,3,2,4,5,3,3,2,2,3,3,2,0,0,0,1,0,0,0
+P131,22,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,5,3,3,3,4,2,4,3,3,3,4,0,0,0,0,0,0,0
+P132,20,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Mediocampista defensivo,3,4,4,3,2,5,2,4,3,4,3,5,0,0,0,0,0,0,0
+P133,26,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista ofensivo,3,4,3,5,4,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P134,16,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,2,2,3,3,2,3,2,2,2,3,2,0,0,0,1,0,0,0
+P135,23,De 6 a 10 años,3,De 3 a 5 horas,2,Amateur en un equipo organizado,Defensa central,2,4,5,3,2,4,2,5,4,3,3,4,0,0,0,0,0,0,0
+P136,20,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Extremo,5,4,3,4,5,3,4,2,2,3,3,3,0,0,0,0,0,0,0
+P137,18,De 3 a 5 años,2,De 1 a 2 horas,1,Escolar,Defensa central,2,3,4,3,2,3,2,4,4,3,3,4,0,0,0,0,0,0,0
+P138,25,Más de 10 años,4,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,4,2,5,2,5,3,4,3,5,0,0,0,0,0,0,0
+P139,16,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Lateral,4,3,2,3,3,3,2,3,2,3,3,3,0,0,0,1,0,0,0
+P140,22,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Delantero,4,5,4,4,4,3,5,2,4,4,3,4,0,0,0,0,0,0,0
+P141,19,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Portero,2,3,3,2,1,3,1,2,3,3,5,4,0,0,0,0,0,0,0
+P142,14,Menos de 1 año,0,De 1 a 2 horas,1,Escolar,Delantero,3,2,2,2,3,2,3,1,1,2,3,2,0,0,0,1,0,0,0
+P143,21,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Extremo,4,3,3,3,4,3,3,2,2,3,3,3,0,0,0,0,0,0,0
+P144,48,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Mediocampista ofensivo,4,4,3,4,4,5,3,3,3,2,5,4,0,0,0,0,0,0,0
+P145,33,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Defensa central,3,3,4,3,2,3,3,2,4,4,3,3,0,0,0,0,0,0,0
+P146,19,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Portero,2,2,2,2,1,2,1,2,2,2,4,2,0,0,0,0,0,0,0
+P147,26,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,4,3,3,3,3,2,3,3,3,3,4,0,0,0,0,0,0,0
+P148,41,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista ofensivo,4,4,3,4,4,5,4,3,3,5,4,1,0,0,0,0,0,0,0
+P149,17,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,2,2,2,2,1,2,1,3,3,2,2,2,0,0,0,1,0,0,0
+P150,30,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,3,2,4,2,4,3,4,3,4,0,1,1,0,0,0,0
+P151,55,Más de 10 años,4,Más de 12 horas,5,Profesional,Defensa central,4,5,5,4,3,5,3,5,5,5,4,5,0,0,0,0,0,0,0
+P152,22,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Mediocampista ofensivo,3,3,2,3,3,3,2,2,2,4,3,3,0,0,0,0,0,0,0
+P153,49,De 6 a 10 años,3,Más de 12 horas,5,Competitivo o semiprofesional,Portero,2,3,3,2,1,3,1,4,4,4,5,5,0,0,0,0,0,0,0
+P154,36,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Extremo,5,4,3,4,5,4,4,2,2,4,4,4,0,0,0,0,0,0,0
+P155,15,Menos de 1 año,0,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,3,2,2,2,2,2,1,2,2,2,2,2,0,0,0,1,0,0,0
+P156,44,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista defensivo,3,5,4,4,3,4,3,4,4,4,3,4,0,1,1,0,0,0,0
+P157,27,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Lateral,4,4,3,3,3,3,2,3,3,3,3,4,0,1,1,0,0,0,0
+P158,34,De 6 a 10 años,3,De 9 a 12 horas,4,Competitivo o semiprofesional,Delantero,5,4,5,4,5,3,5,2,4,4,4,5,0,0,0,0,0,0,0
+P159,52,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista ofensivo,4,4,3,4,4,4,3,3,2,3,2,4,0,0,0,0,0,0,0
+P160,18,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Extremo,4,3,3,3,4,3,3,3,3,4,4,3,0,0,0,0,0,0,0
+P161,25,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,2,2,2,3,2,3,1,1,2,2,2,0,0,0,0,0,0,0
+P162,46,De 6 a 10 años,3,De 9 a 12 horas,4,Profesional,Mediocampista ofensivo,5,4,5,5,4,5,4,3,3,4,4,5,0,0,0,0,0,0,0
+P163,29,De 3 a 5 años,2,De 3 a 5 horas,2,Recreativo (por diversión),Lateral,4,3,3,3,3,3,2,3,3,3,3,3,0,0,0,0,0,0,0
+P164,19,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Portero,3,4,3,3,2,3,2,4,3,5,4,4,0,0,0,0,0,0,0
+P165,21,Más de 10 años,4,De 9 a 12 horas,4,Competitivo o semiprofesional,Defensa central,3,5,5,3,2,4,5,5,5,4,3,5,0,0,0,0,0,0,0
+P166,18,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Lateral,4,3,3,4,4,4,4,3,3,3,3,3,0,0,0,0,0,0,0
+P167,22,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Mediocampista defensivo,3,5,4,4,3,5,5,4,5,3,3,5,0,0,0,0,0,0,0
+P168,20,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista ofensivo,4,4,3,5,5,5,4,3,2,5,3,4,0,0,0,0,0,0,0
+P169,17,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Extremo,5,3,3,4,5,3,3,2,2,3,4,3,0,0,0,1,0,0,0
+P170,23,Más de 10 años,4,De 9 a 12 horas,4,Competitivo o semiprofesional,Delantero,5,4,5,4,4,3,5,2,4,4,4,4,0,0,0,0,0,0,0
+P171,19,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Portero,4,4,3,3,2,3,2,3,3,3,5,4,0,0,0,0,0,0,0
+P172,25,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Defensa central,3,5,5,3,2,4,2,5,5,4,3,5,0,0,0,0,0,0,0
+P173,16,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Lateral,3,2,2,3,3,3,2,3,2,2,3,2,0,0,0,1,0,0,0
+P174,20,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,4,3,5,2,4,4,5,3,4,0,0,0,0,0,0,0
+P175,18,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Mediocampista ofensivo,4,3,2,4,4,4,3,2,2,5,3,3,0,0,0,0,0,0,0
+P176,21,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Extremo,5,4,3,4,5,4,4,3,2,4,4,3,0,0,0,0,0,0,0
+P177,24,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Defensa central,5,5,4,5,4,4,5,3,5,4,4,5,0,0,0,0,0,0,0
+P178,15,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Portero,2,2,2,2,1,2,1,2,3,2,4,2,0,0,0,1,0,0,0
+P179,19,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Defensa central,3,4,4,3,2,3,2,4,4,3,3,4,0,0,0,0,0,0,0
+P180,22,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,4,3,4,4,4,3,4,3,4,3,4,0,0,0,0,0,0,0
+P181,20,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista ofensivo,4,4,3,5,4,5,4,3,2,5,4,5,0,0,0,0,0,0,0
+P182,18,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Extremo,5,3,3,4,4,3,3,2,2,3,4,3,0,0,0,0,0,0,0
+P183,26,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,3,2,3,3,3,3,4,2,3,3,3,3,0,0,0,0,0,0,0
+P184,14,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,3,2,2,3,3,2,3,1,2,2,3,2,0,0,0,1,0,0,0
+P185,16,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Extremo,5,3,2,4,5,3,3,2,2,3,4,3,0,1,0,1,0,0,0
+P186,17,De 3 a 5 años,2,De 6 a 8 horas,3,Escolar,Mediocampista ofensivo,4,4,3,5,4,5,3,2,2,5,3,4,0,0,0,1,0,0,0
+P187,18,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Defensa central,3,4,4,3,2,4,2,5,5,3,3,4,0,0,0,0,0,0,0
+P188,19,De 3 a 5 años,2,De 3 a 5 horas,2,Recreativo (por diversión),Portero,3,3,3,3,1,2,1,3,3,3,5,3,0,0,0,0,0,0,0
+P189,20,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,5,3,4,4,4,2,4,3,4,3,4,0,0,0,0,0,0,0
+P190,21,Más de 10 años,4,De 9 a 12 horas,4,Competitivo o semiprofesional,Delantero,5,5,4,4,5,3,5,2,4,4,4,4,0,0,0,0,0,0,0
+P191,22,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,4,3,5,2,4,4,5,3,5,0,0,0,0,0,0,0
+P192,23,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Extremo,5,5,4,5,5,4,4,3,2,4,4,5,0,0,0,0,0,0,0
+P193,24,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Defensa central,3,3,5,3,2,4,2,5,4,4,3,4,0,0,0,0,0,0,0
+P194,25,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista ofensivo,3,4,3,5,4,5,4,3,2,5,4,5,0,0,0,0,0,0,0
+P195,27,De 6 a 10 años,3,De 3 a 5 horas,2,Recreativo (por diversión),Portero,2,3,3,3,1,3,1,3,3,4,5,4,0,0,0,0,0,0,0
+P196,29,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,3,4,4,4,3,4,2,4,3,4,3,5,0,0,0,0,0,0,0
+P197,31,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Defensa central,3,3,4,3,3,3,4,2,4,3,3,3,0,0,0,0,0,0,0
+P198,33,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista defensivo,2,3,3,4,2,5,2,4,3,5,3,5,0,0,0,0,0,0,0
+P199,35,De 6 a 10 años,3,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,2,4,3,2,3,1,4,4,3,3,4,0,0,0,0,0,0,0
+P200,37,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Portero,2,2,3,3,1,3,1,3,3,4,4,4,0,0,0,0,0,0,0
+P201,38,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista ofensivo,2,2,2,4,3,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P202,40,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,2,2,3,3,1,4,1,4,4,4,3,5,0,0,0,0,0,0,0
+P203,15,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Lateral,4,3,2,3,4,3,2,3,2,3,3,3,0,0,0,1,0,0,0
+P204,17,De 3 a 5 años,2,De 6 a 8 horas,3,Escolar,Delantero,5,4,3,4,4,3,5,2,3,3,4,3,0,0,0,1,0,0,0
+P205,20,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Portero,3,4,4,3,1,3,1,3,4,4,5,4,0,0,0,0,0,0,0
+P206,22,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Mediocampista defensivo,4,5,3,5,5,5,4,3,2,5,4,5,0,0,0,0,0,0,0
+P207,26,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Defensa central,3,4,5,3,2,4,2,5,5,4,3,5,0,0,0,0,0,0,0
+P208,28,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Extremo,4,3,3,4,4,3,4,2,2,3,4,3,0,0,0,0,0,0,0
+P209,32,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,4,2,5,2,4,4,5,3,5,0,0,0,0,0,0,0
+P210,36,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,2,2,3,3,2,3,4,2,3,3,3,3,0,0,0,0,0,0,0
+P211,39,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Portero,2,2,3,3,1,3,1,3,3,4,4,4,0,0,0,0,0,0,0
+P212,42,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,2,3,4,3,1,4,1,4,4,4,3,5,0,0,0,0,0,0,0
+P213,16,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Extremo,5,3,2,4,5,3,3,2,2,3,4,3,0,1,1,1,0,0,0
+P214,18,De 3 a 5 años,2,De 6 a 8 horas,3,Escolar,Mediocampista defensivo,3,4,3,4,3,5,2,4,3,5,3,4,0,0,0,0,0,0,0
+P215,21,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Delantero,5,4,4,4,4,3,5,2,4,4,4,4,0,0,0,0,0,0,0
+P216,24,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Lateral,5,5,4,4,4,4,3,5,3,4,4,5,0,0,0,0,0,0,0
+P217,27,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Portero,3,4,3,4,1,3,1,3,4,4,5,4,0,0,0,0,0,0,0
+P218,30,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista defensivo,3,3,3,5,4,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P219,34,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Defensa central,2,4,5,3,2,4,2,5,5,4,3,5,0,0,0,0,0,0,0
+P220,38,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista defensivo,2,2,3,3,2,4,1,3,3,4,3,4,0,0,0,0,0,0,0
+P221,41,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,2,2,3,3,2,3,4,2,3,3,3,3,0,0,0,0,0,0,0
+P222,45,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,1,3,3,1,4,1,4,4,4,2,5,0,0,0,0,0,0,0
+P223,13,Menos de 1 año,0,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,3,2,2,2,3,2,3,1,2,2,3,2,0,0,0,1,0,0,0
+P224,15,De 1 a 2 años,1,De 3 a 5 horas,2,Escolar,Portero,3,3,2,3,1,2,1,2,3,3,5,3,0,0,0,1,0,0,0
+P225,16,De 3 a 5 años,2,De 6 a 8 horas,3,Escolar,Extremo,5,4,3,4,5,3,4,2,2,3,4,3,0,0,0,1,0,0,0
+P226,17,De 3 a 5 años,2,De 3 a 5 horas,2,Escolar,Lateral,4,3,3,4,4,4,2,4,3,3,3,3,0,0,0,1,0,0,0
+P227,18,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Mediocampista ofensivo,4,5,3,5,5,5,4,2,2,5,4,5,0,0,0,0,0,0,0
+P228,19,De 3 a 5 años,2,De 6 a 8 horas,3,Amateur en un equipo organizado,Defensa central,3,4,4,3,2,4,2,5,5,4,3,4,0,0,0,0,0,0,0
+P229,20,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Delantero,5,5,4,5,4,4,5,2,4,4,4,5,0,0,0,0,0,0,0
+P230,21,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Mediocampista defensivo,3,4,4,4,3,5,2,4,4,5,3,5,0,0,0,0,0,0,0
+P231,22,Más de 10 años,4,De 9 a 12 horas,4,Competitivo o semiprofesional,Portero,3,5,4,4,1,4,1,3,5,4,5,5,0,0,0,0,0,0,0
+P232,23,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Extremo,5,4,3,4,5,4,4,2,2,4,4,3,0,0,0,0,0,0,0
+P233,25,Más de 10 años,4,De 3 a 5 horas,2,Amateur en un equipo organizado,Defensa central,3,3,5,3,2,4,2,5,5,4,3,5,0,0,0,0,0,0,0
+P234,27,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,4,4,4,4,4,3,4,3,4,3,4,0,0,0,0,0,0,0
+P235,29,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Mediocampista ofensivo,3,3,3,4,4,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P236,31,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Delantero,2,2,3,3,2,3,4,2,3,3,3,3,0,0,0,0,0,0,0
+P237,33,De 6 a 10 años,3,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista defensivo,2,3,3,4,2,5,2,4,3,5,3,4,0,0,0,0,0,0,0
+P238,35,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Portero,2,3,3,3,1,3,1,3,3,4,5,4,0,0,0,0,0,0,0
+P239,38,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,2,2,3,3,2,3,1,3,2,3,3,3,0,0,0,0,0,0,0
+P240,41,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,2,2,4,3,1,4,1,4,4,4,3,5,0,1,0,0,0,0,0
+P241,44,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista defensivo,2,2,2,4,3,5,2,2,2,5,3,4,0,0,0,0,0,0,0
+P242,40,De 3 a 5 años,2,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,2,1,3,3,2,3,3,2,3,3,2,3,0,0,0,0,0,0,0
+P243,15,De 1 a 2 años,1,De 3 a 5 horas,2,Recreativo (por diversión),Mediocampista ofensivo,4,3,2,4,4,4,3,2,2,4,3,3,0,0,0,1,0,0,0
+P244,18,De 3 a 5 años,2,De 6 a 8 horas,3,Escolar,Portero,3,4,3,3,1,3,1,3,4,3,5,4,0,0,0,0,0,0,0
+P245,20,De 6 a 10 años,3,De 9 a 12 horas,4,Amateur en un equipo organizado,Extremo,5,4,3,5,5,4,4,2,2,4,4,4,0,0,0,0,0,0,0
+P246,23,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Mediocampista defensivo,3,5,4,4,3,5,2,5,4,5,3,5,0,0,0,0,0,0,0
+P247,26,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Delantero,4,4,5,4,4,3,5,3,5,4,4,4,0,0,0,0,0,0,0
+P248,30,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Lateral,3,3,3,4,3,4,2,4,3,4,3,4,0,0,0,0,0,0,0
+P249,34,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,2,3,4,3,2,4,2,5,5,4,3,5,0,0,0,0,0,0,0
+P250,37,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Mediocampista ofensivo,2,2,2,4,3,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P251,43,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Delantero,2,2,3,3,2,3,4,2,3,3,3,3,0,0,0,0,0,0,0
+P252,47,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Defensa central,2,1,3,3,1,4,1,4,4,4,2,5,0,0,0,0,0,0,0
+P253,14,Menos de 1 año,0,De 3 a 5 horas,2,Amateur en un equipo organizado,Extremo,5,3,2,4,4,3,3,2,2,3,4,3,0,0,0,1,0,0,0
+P254,16,De 3 a 5 años,2,De 6 a 8 horas,3,Escolar,Mediocampista ofensivo,4,4,3,5,4,5,3,2,2,5,3,4,0,0,0,1,0,0,0
+P255,17,De 1 a 2 años,1,De 1 a 2 horas,1,Recreativo (por diversión),Portero,3,2,2,3,1,2,1,2,3,3,4,2,0,0,0,1,0,0,0
+P256,19,De 6 a 10 años,3,De 3 a 5 horas,2,Amateur en un equipo organizado,Delantero,5,4,4,4,4,3,5,2,4,4,4,4,0,0,0,0,0,0,0
+P257,20,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Defensa central,3,3,4,3,2,4,2,4,5,3,3,4,0,0,0,0,0,0,0
+P258,21,Más de 10 años,4,Más de 12 horas,5,Competitivo o semiprofesional,Mediocampista defensivo,3,5,4,4,3,5,2,5,4,5,3,5,0,0,0,0,0,0,0
+P259,22,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Lateral,4,4,3,4,4,4,3,4,3,4,4,4,0,0,0,0,0,0,0
+P260,24,Más de 10 años,4,De 9 a 12 horas,4,Competitivo o semiprofesional,Portero,3,5,4,4,1,4,1,3,5,4,5,5,0,0,0,0,0,0,0
+P261,25,De 6 a 10 años,3,De 6 a 8 horas,3,Amateur en un equipo organizado,Extremo,5,4,3,5,5,4,4,2,2,4,4,3,0,0,0,0,0,0,0
+P262,27,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Delantero,3,3,4,3,3,3,4,2,4,3,3,3,0,0,0,0,0,0,0
+P263,29,Más de 10 años,4,De 6 a 8 horas,3,Amateur en un equipo organizado,Defensa central,3,4,5,3,2,4,2,5,5,4,3,5,0,0,0,0,0,0,0
+P264,31,De 3 a 5 años,2,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista ofensivo,3,3,3,4,4,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P265,33,Más de 10 años,4,De 3 a 5 horas,2,Recreativo (por diversión),Lateral,3,3,4,4,3,4,2,4,3,4,3,4,0,0,0,0,0,0,0
+P266,35,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Portero,2,2,3,3,1,3,1,3,3,4,5,4,0,0,0,0,0,0,0
+P267,37,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista defensivo,2,3,3,4,2,5,2,4,3,5,3,5,0,0,0,0,0,0,0
+P268,39,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Delantero,2,2,3,3,2,3,4,2,3,3,3,3,0,0,0,0,0,0,0
+P269,41,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Defensa central,2,2,4,3,1,4,1,4,4,4,3,5,0,1,1,0,0,0,0
+P270,44,Más de 10 años,4,"Actualmente, ninguna",0,Recreativo (por diversión),Lateral,2,2,3,3,2,3,2,3,2,3,3,3,0,0,0,0,0,0,0
+P271,37,Más de 10 años,4,De 1 a 2 horas,1,Recreativo (por diversión),Mediocampista ofensivo,2,2,2,4,3,5,3,2,2,5,3,4,0,0,0,0,0,0,0
+P272,30,De 3 a 5 años,2,De 3 a 5 horas,2,Amateur en un equipo organizado,Defensa central,1,1,3,2,1,3,1,4,4,3,2,4,0,0,0,0,0,0,0

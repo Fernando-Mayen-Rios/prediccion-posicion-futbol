@@ -1,0 +1,20 @@
+﻿n,paso,descripcion,filas_afectadas
+1,Estructura,Se renombraron las 19 columnas (marca temporal + 18 preguntas) con una expresión regular sobre el número de pregunta.,290
+2,Orden,Se ordenaron las respuestas por orden de llegada. La marca temporal no se incluye en los archivos de salida.,290
+3,Normalización,'jugo': cada valor se reconoció con una regla; se reescribieron 0 respuestas.,0
+4,Normalización,'tiempo_juego': cada valor se reconoció con una regla; se reescribieron 0 respuestas.,0
+5,Normalización,'horas_semana': cada valor se reconoció con una regla; se reescribieron 0 respuestas.,0
+6,Normalización,'nivel': cada valor se reconoció con una regla; se reescribieron 0 respuestas.,0
+7,Normalización,'posicion': cada valor se reconoció con una regla; se reescribieron 0 respuestas.,0
+8,Exclusión por regla,"Se apartaron las respuestas que dijeron 'No' a la pregunta 1 (sin posición, y vacías en el resto).",18
+9,Tipos,La edad se convirtió a entero y se verificó que estuviera entre 5 y 100 años.,272
+10,Escalas,Se extrajo el número (1-5) de las 12 habilidades con una expresión regular. 'No sé' pasó a faltante: 17 celdas.,17
+11,Codificación,tiempo_juego (0-4) y horas_semana (0-5) se codificaron respetando su orden.,272
+12,Bandera,"'duplicado_posible': respuestas idénticas en las 18 preguntas (grupo completo). Solo se marca, no se elimina.",14
+13,Bandera,"'duplicado_repetida': segunda o posterior respuesta idéntica. Solo se marca, no se elimina.",7
+14,Bandera,"'menor_18': menores de 18 años. Solo se marca, no se elimina.",33
+15,Bandera,"'edad_atipica': edad fuera de [-13.0, 75.0] años. Solo se marca, no se elimina.",1
+16,Bandera,"'linea_recta': mismo valor en todas las habilidades. Solo se marca, no se elimina.",4
+17,Bandera,"'incoherencia_experiencia': edad incompatible con el tiempo jugando. Solo se marca, no se elimina.",0
+18,Anonimización,Se asignó un código por persona (P001...) y se verificó que no haya marca temporal en los archivos de salida.,272
+19,Salida,"Se guardaron Datos_Limpios.csv, Respuestas_Originales_Anonimas.csv y esta bitácora.",272

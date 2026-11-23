@@ -1,0 +1,17 @@
+﻿kpi,valor,descripcion
+Participantes válidos,272,Personas con posición habitual y habilidades contestadas
+Respuestas recibidas,290,Incluye quienes respondieron 'No' a la pregunta 1
+% de respuestas válidas,93.8,Válidas / recibidas
+Edad mediana,27.0,Años
+% menores de 18 años,12.1,Sobre los participantes válidos
+% que juega por diversión,41.5,Nivel 'Recreativo (por diversión)'
+% en equipo organizado o más,46.3,"Amateur, competitivo o profesional"
+Posición más frecuente,Defensa central (53),Personas
+Posición menos frecuente,Extremo (27),Personas
+Razón de desbalance,1.96,Más frecuente / menos frecuente
+Habilidad que más separa posiciones,Regate (ε² = 0.51),Prueba de Kruskal-Wallis
+% de celdas 'No sé',0.52,Sobre todas las habilidades
+Varianza explicada por PC1 + PC2,63.9%,PCA exploratorio
+Componentes para explicar 80 %,4,De 12 habilidades
+Azar entre las 7 posiciones,14.3,% de acierto de adivinar al azar
+Modelo base (siempre la más común),19.5,% de acierto de decir siempre la posición más frecuente
