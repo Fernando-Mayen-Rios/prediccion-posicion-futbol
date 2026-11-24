@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tablero analítico · Posición habitual de un jugador de fútbol</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#14231b;--mut:#51615a;--line:#dbe4df;--a:#1d8a4b;--a2:#0f5e32;--b:#c9821a;--neg:#3b6fb6;--pos:#c2562b;--ref:#b23a48;
+color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1511;--card:#16211b;--ink:#e6f0ea;--mut:#9db1a7;--line:#27372f;--a:#4fc17f;--a2:#8ee0ae;--b:#e8a547;--neg:#6ea0e6;--pos:#ee8a5e;--ref:#ee7f8d}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:62px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--a2)}
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;overflow-x:auto;white-space:nowrap}
+nav a{font-size:14px;text-decoration:none;color:var(--mut);padding:4px 12px;border-radius:999px;border:1px solid transparent}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-color:var(--line);outline:none}
+main{max-width:1100px;margin:0 auto;padding:22px 16px 48px}
+h1{font-size:clamp(26px,5vw,42px);line-height:1.12;margin:6px 0 12px;letter-spacing:-.02em;max-width:24ch}
+h2{font-size:clamp(20px,3.2vw,26px);margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:16px;margin:0 0 2px}
+section{margin:0 0 44px}
+.sub{color:var(--mut);max-width:70ch;margin:0 0 18px}
+.nota{color:var(--mut);font-size:14px;margin:0 0 12px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));margin-bottom:14px}
+.kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.kpi b{display:block;font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--mut);font-size:13px}
+.alerta{border-left:4px solid var(--ref)}
+.exito{border-left:4px solid var(--a)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.chips>span{color:var(--mut);font-size:14px}
+button.chip{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button.chip[aria-pressed="true"]{background:var(--a2);color:var(--bg);border-color:var(--a2)}
+button.chip:focus-visible,a.boton:focus-visible,summary:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.filtro{position:sticky;top:50px;z-index:5;background:var(--bg);padding:8px 0 2px}
+.row{display:grid;grid-template-columns:minmax(96px,34%) 1fr 76px;gap:10px;align-items:center;margin:7px 0;font-size:14px}
+.row .lab{overflow-wrap:anywhere}
+.track{height:13px;background:var(--line);border-radius:7px;position:relative}
+.fill{height:100%;border-radius:7px}
+.mark{position:absolute;top:-5px;bottom:-5px;width:0;border-left:2px dashed var(--ref)}
+.mark2{border-left-color:var(--b)}
+.row b{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:13px}
+.leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin-top:10px}
+.leyenda i{display:inline-block;width:12px;height:0;border-top:2px dashed var(--ref);margin-right:6px;vertical-align:middle}
+.leyenda i.b{border-top-color:var(--b)}
+.tabla{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;text-align:center;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--mut);font-size:12px}
+td.izq,th.izq{text-align:left}
+.heat td{min-width:44px}
+.heat th.v{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;height:128px;padding:4px}
+ul.lista{margin:0;padding-left:18px;color:var(--mut);font-size:14px}
+ul.lista li{margin:5px 0}
+details{border-top:1px solid var(--line);padding:8px 0}
+details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:600;font-size:14px}
+details p{margin:6px 0 2px;color:var(--mut);font-size:14px}
+a.boton{display:inline-block;background:var(--a2);color:var(--bg);padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600}
+.etiqueta{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mut);margin-right:6px}
+footer{color:var(--mut);font-size:13px;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:560px){.row{grid-template-columns:minmax(88px,38%) 1fr 62px}.card{padding:14px}}
+</style>
+</head>
+<body>
+<header class="top"><nav aria-label="Secciones">
+<a href="#problema">Problema</a><a href="#participantes">Participantes</a><a href="#posiciones">Posiciones</a>
+<a href="#caracteristicas">Características</a><a href="#modelos">Modelos</a><a href="#resultados">Resultados</a>
+<a href="#prediccion">Predicción</a><a href="#conclusiones">Conclusiones</a>
+</nav></header>
+<main>
+
+<section id="problema">
+<h1>¿Se puede predecir la posición habitual de un jugador de fútbol?</h1>
+<p class="sub" id="hero"></p>
+<div class="kpis" id="kpis-hero"></div>
+<div class="grid">
+<div class="card"><h2>Problemática y objetivo</h2>
+<p class="nota">Qué problema abordamos.</p>
+<ul class="lista">
+<li>Saber en qué posición juega alguien suele apoyarse en opiniones o percepciones, no en datos.</li>
+<li>Exploramos si las <b>autoevaluaciones de habilidades</b> que una persona reporta de sí misma bastan para predecir la posición que <b>juega habitualmente</b>.</li>
+<li><b>Qué se predice:</b> la posición habitual (no la ideal ni la que “debería” jugar), entre siete: portero, defensa central, lateral, mediocampista defensivo, mediocampista ofensivo, extremo y delantero.</li>
+<li><b>Tipo de problema:</b> aprendizaje supervisado, clasificación de siete clases. Conocemos la posición real de cada persona, así que podemos medir si el modelo acierta.</li>
+</ul></div>
+<div class="card"><h2>Cómo lo resolvimos</h2>
+<p class="nota">De las respuestas a una predicción.</p>
+<ul class="lista">
+<li><b>Formulario propio</b> de 18 preguntas, sin nombres ni datos de contacto.</li>
+<li><b>Base de datos</b> (SQLite) y <b>limpieza solo con Python</b>: reglas y expresiones regulares, con bitácora de cada paso.</li>
+<li><b>Análisis exploratorio</b>, indicadores clave y comparación de <b>ocho modelos</b> contra un modelo base, con validación cruzada anidada.</li>
+<li><b>Aplicación web</b> pública donde cualquier persona introduce sus habilidades y recibe la predicción.</li>
+</ul></div>
+</div>
+</section>
+
+<div class="filtro"><div class="chips" id="filtro-nivel" role="group" aria-label="Filtrar por nivel en que juega"></div></div>
+
+<section id="participantes">
+<h2>Participantes y calidad de los datos</h2>
+<p class="sub" id="sub-participantes"></p>
+<div class="kpis" id="kpis-part"></div>
+<div class="grid">
+<div class="card"><h3>Edad</h3><p class="nota" id="n-edad"></p><div id="g-edad"></div></div>
+<div class="card"><h3>Nivel en que juega</h3><p class="nota">Siempre muestra a todas las personas.</p><div id="g-nivel"></div></div>
+<div class="card"><h3>Tiempo jugando</h3><p class="nota" id="n-tiempo"></p><div id="g-tiempo"></div></div>
+<div class="card"><h3>Horas por semana</h3><p class="nota" id="n-horas"></p><div id="g-horas"></div></div>
+</div>
+<div class="card"><h3>Calidad de los datos</h3><p class="nota">Lo que hicimos antes de analizar. Los casos dudosos se <b>marcan</b>, no se borran.</p><ul class="lista" id="calidad"></ul></div>
+</section>
+
+<section id="posiciones">
+<h2>Distribución de las posiciones</h2>
+<p class="sub">La variable que queremos predecir. Con las siete posiciones bien representadas no hizo falta fusionar ninguna.</p>
+<div class="grid">
+<div class="card"><h3>Personas por posición</h3><p class="nota" id="n-pos"></p><div id="g-pos"></div>
+<div class="leyenda"><span><i></i>Azar (1 de 7)</span><span><i class="b"></i>Modelo base (siempre la posición más común)</span></div></div>
+<div class="card"><h3>Qué significa para el modelo</h3>
+<ul class="lista" id="txt-pos"></ul></div>
+</div>
+</section>
+
+<section id="caracteristicas">
+<h2>Análisis de las características</h2>
+<p class="sub">Cómo se califican las personas en cada habilidad según la posición en que juegan. Recuerda: son <b>autoevaluaciones</b>, así que reflejan cómo se percibe cada quien.</p>
+<div class="grid">
+<div class="card"><h3>Perfil de una posición</h3><p class="nota">Promedio (1 a 5) de cada habilidad. La marca punteada es el promedio de todos los jugadores.</p>
+<div class="chips" id="sel-pos" role="group" aria-label="Elegir posición"></div>
+<div id="g-perfil"></div>
+<div class="leyenda"><span><i></i>Promedio general</span></div></div>
+<div class="card"><h3>Qué habilidades separan mejor las posiciones</h3><p class="nota">Tamaño del efecto (ε², de 0 a 1) de la prueba de Kruskal-Wallis, con todas las personas. Más alto = la habilidad cambia más entre posiciones.</p><div id="g-sep"></div></div>
+</div>
+<div class="card"><h3>Mapa de habilidades por posición</h3><p class="nota">Cuántas desviaciones estándar se aleja cada posición del promedio general (naranja = más alta, azul = más baja).</p><div class="tabla" id="g-heat"></div></div>
+<div class="card" style="margin-top:14px"><h3>Correlaciones entre habilidades</h3><p class="nota">Correlación de Spearman: la matriz cuadrada de 12 × 12 que compara cada habilidad con cada otra. Cerca de 1 = quien se califica alto en una tiende a calificarse alto en la otra.</p><div class="tabla" id="g-corr"></div></div>
+</section>
+
+<section id="modelos">
+<h2>Modelos: comparación</h2>
+<p class="sub" id="sub-modelos"></p>
+<div class="grid">
+<div class="card alerta"><h3>¿Qué tan bien predice cada modelo?</h3><p class="nota">F1 macro (promedia las siete posiciones por igual) con validación cruzada anidada; las barras finas son la variación entre pliegues.</p><div id="g-modelos"></div>
+<div class="leyenda"><span><i></i>Modelo base</span></div></div>
+<div class="card"><h3>¿Sirve PCA?</h3><p class="nota">Mismo modelo sin y con PCA (resumir las variables en pocos componentes).</p><div class="tabla" id="g-pca"></div><p class="nota" id="txt-pca" style="margin-top:10px"></p>
+<h3 style="margin-top:14px">¿Ayuda agregar experiencia?</h3><p class="nota" id="txt-vars"></p></div>
+</div>
+<div class="card"><h3>Qué hace cada modelo y por qué lo probamos</h3><div id="g-descr"></div></div>
+</section>
+
+<section id="resultados">
+<h2>Resultados del modelo elegido</h2>
+<p class="sub" id="sub-res"></p>
+<div class="kpis" id="kpis-res"></div>
+<div class="grid">
+<div class="card"><h3>Qué tan bien detecta cada posición</h3><p class="nota">F1 por posición (validación cruzada, primera repetición).</p><div id="g-clase"></div></div>
+<div class="card"><h3>Qué variables pesan más</h3><p class="nota">Cuánto baja el F1 al barajar cada variable. No es causalidad: indica qué autoevaluaciones ayudan a distinguir posiciones.</p><div id="g-imp"></div></div>
+</div>
+<div class="card"><h3>Dónde se equivoca</h3><p class="nota">Cada fila es la posición real; cada columna, lo que dijo el modelo. El número es la cantidad de personas y el color, el % de esa fila.</p><div class="tabla" id="g-conf"></div><ul class="lista" id="txt-conf" style="margin-top:10px"></ul></div>
+<div class="grid" style="margin-top:14px">
+<div class="card"><h3>¿Cambia algo si quitamos casos dudosos?</h3><div class="tabla" id="g-sens"></div><p class="nota" id="txt-sens" style="margin-top:10px"></p></div>
+<div class="card"><h3>¿Podemos mostrar porcentajes?</h3><p class="nota" id="txt-cal"></p><div class="tabla" id="g-cal"></div></div>
+</div>
+<div class="card" style="margin-top:14px"><h3>Exploración sin la etiqueta (K-means)</h3><p class="nota" id="txt-km"></p><div id="g-km"></div></div>
+</section>
+
+<section id="prediccion">
+<h2>Predicciones: pruébalo tú</h2>
+<p class="sub">La aplicación web pide las 12 autoevaluaciones y devuelve la posición más probable y las siguientes. Es una herramienta de exploración, no un diagnóstico.</p>
+<div class="card exito"><div id="app-enlace"></div></div>
+</section>
+
+<section id="conclusiones">
+<h2>Conclusiones y limitaciones</h2>
+<div class="grid">
+<div class="card exito"><h3>Qué encontramos</h3><ul class="lista" id="concl"></ul></div>
+<div class="card alerta"><h3>Limitaciones</h3><ul class="lista" id="limit"></ul></div>
+</div>
+</section>
+
+<footer>Datos anónimos: sin nombres, correos ni marcas de tiempo; cada persona tiene un código. Todas las cifras salen de los archivos del proyecto (cuadernos 01 a 04) y se calculan al generar este tablero. Los resultados del modelado corresponden a la validación cruzada anidada, no a los datos de entrenamiento. Proyecto de Sistemas Inteligentes · UNAM.</footer>
+</main>
+
+<script>
+const D=/*__DATOS__*/null;
+const S=D.resumen, N=v=>Number(v);
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const f1=(v,d=1)=>Number(v).toFixed(d);
+const pc=(v,d=1)=>(100*Number(v)).toFixed(d)+" %";
+const HAB=D.habilidades, POS=D.posiciones;
+const NIVELES=["Escolar","Recreativo (por diversión)","Amateur en un equipo organizado","Competitivo o semiprofesional","Profesional"];
+const TIEMPO=["Menos de 1 año","De 1 a 2 años","De 3 a 5 años","De 6 a 10 años","Más de 10 años"];
+const HORAS=["Actualmente, ninguna","De 1 a 2 horas","De 3 a 5 horas","De 6 a 8 horas","De 9 a 12 horas","Más de 12 horas"];
+const CORTO=n=>n.replace(" (por diversión)","").replace(" en un equipo organizado","");
+let nivel="Todos", posSel=POS[0];
+
+function bars(el,items,max){
+  el.innerHTML=items.map(it=>'<div class="row"><span class="lab">'+esc(it.label)+'</span><div class="track"><div class="fill" style="width:'+Math.max(0,Math.min(100,it.value/max*100)).toFixed(1)+'%;background:'+(it.color||"var(--a)")+'"></div>'
+   +(it.err?'<div style="position:absolute;top:5px;height:3px;background:var(--ink);opacity:.55;left:'+Math.max(0,(it.value-it.err)/max*100).toFixed(1)+'%;width:'+Math.min(100,2*it.err/max*100).toFixed(1)+'%"></div>':'')
+   +(it.mark!=null?'<div class="mark" style="left:'+(it.mark/max*100).toFixed(1)+'%"></div>':'')
+   +(it.mark2!=null?'<div class="mark mark2" style="left:'+(it.mark2/max*100).toFixed(1)+'%"></div>':'')
+   +'</div><b>'+esc(it.text)+'</b></div>').join("");
+}
+function mezcla(color,p){return 'color-mix(in srgb,'+color+' '+Math.round(Math.max(0,Math.min(75,p)))+'%,var(--card))';}
+function tabla(el,cols,filas,clase){
+  el.innerHTML='<table class="'+(clase||"")+'"><thead><tr>'+cols.map((c,i)=>'<th class="'+(i===0?"izq":"")+(c.v?" v":"")+'">'+esc(c.t)+'</th>').join("")+'</tr></thead><tbody>'
+   +filas.map(f=>'<tr>'+f.map((c,i)=>'<td class="'+(i===0?"izq":"")+'"'+(c.s?' style="background:'+c.s+'"':'')+'>'+esc(c.t!=null?c.t:c)+'</td>').join("")+'</tr>').join("")+'</tbody></table>';
+}
+const filtradas=()=>D.personas.filter(p=>nivel==="Todos"||p.nivel===nivel);
+const media=(a)=>a.length?a.reduce((x,y)=>x+y,0)/a.length:NaN;
+const mediana=(a)=>{const s=[...a].sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2;};
+const sd=(a)=>{const m=media(a);return Math.sqrt(media(a.map(x=>(x-m)*(x-m)))*a.length/(a.length-1));};
+const conteo=(rows,campo,orden)=>orden.map(o=>({k:o,n:rows.filter(p=>p[campo]===o).length}));
+const mm=D.modelos.find(m=>m.modelo===S.mejor_modelo)||{};
+const base=D.modelos.find(m=>m.modelo.startsWith("Base"));
+
+/* ---------- Texto fijo que usa cifras ---------- */
+$("hero").textContent="Con "+S.personas+" personas y 12 autoevaluaciones de habilidades, el modelo elegido ("+S.mejor_modelo.toLowerCase()+") acierta la posición en "+f1(S.mejor_aciertos_pct,0)+" de cada 100 casos que no vio al entrenar. Adivinar al azar acertaría "+f1(S.azar_pct,1)+" % y responder siempre la posición más común, "+f1(S.base_aciertos_pct,1)+" %. La posición real está entre sus dos primeras opciones el "+f1(S.mejor_top2_pct,0)+" % de las veces.";
+$("kpis-hero").innerHTML=[[S.personas,"participantes válidos de "+D.recibidas+" respuestas"],[f1(S.mejor_aciertos_pct,0)+" %","de aciertos del modelo elegido"],[f1(S.base_aciertos_pct,1)+" %","aciertos del modelo base"],[f1(S.mejor_top2_pct,0)+" %","la posición real está en sus 2 primeras"]]
+ .map(k=>'<div class="card kpi"><b>'+k[0]+'</b><span>'+k[1]+'</span></div>').join("");
+
+/* ---------- Filtro ---------- */
+function pintaFiltro(){
+  $("filtro-nivel").innerHTML='<span>Nivel en que juega:</span>'+["Todos"].concat(NIVELES).map(n=>'<button class="chip" data-n="'+esc(n)+'" aria-pressed="'+(n===nivel)+'">'+esc(CORTO(n))+'</button>').join("")+'<span id="n-filtro"></span>';
+  document.querySelectorAll("button[data-n]").forEach(b=>b.addEventListener("click",()=>{nivel=b.dataset.n;pintaFiltro();pintaFiltrado();}));
+  const n=filtradas().length;
+  $("n-filtro").textContent=n+" personas"+(n<30?" (pocas: cuidado al interpretar)":"");
+}
+
+/* ---------- Secciones que dependen del filtro ---------- */
+function pintaFiltrado(){
+  const rows=filtradas(), n=rows.length;
+  $("sub-participantes").textContent="Respondieron "+D.recibidas+" personas; "+(D.recibidas-D.personas.length)+" dijeron que no han jugado fútbol o no pueden identificar su posición habitual, así que no tienen posición que predecir y quedan fuera. El formulario incluye a jugadores de cualquier nivel.";
+  const edades=rows.map(p=>p.edad);
+  $("kpis-part").innerHTML=[[n,nivel==="Todos"?"participantes válidos":"personas en este nivel"],[n?f1(mediana(edades),0):"–","edad mediana (años)"],[n?pc(rows.filter(p=>p.edad<18).length/n,0):"–","menores de 18 años"],[n?pc(rows.filter(p=>p.nivel==="Recreativo (por diversión)").length/n,0):"–","juegan por diversión"]]
+   .map(k=>'<div class="card kpi"><b>'+k[0]+'</b><span>'+k[1]+'</span></div>').join("");
+  const tramos=[["Menos de 18",0,17],["18 a 24",18,24],["25 a 34",25,34],["35 a 44",35,44],["45 a 54",45,54],["55 o más",55,200]];
+  const cE=tramos.map(t=>({label:t[0],v:rows.filter(p=>p.edad>=t[1]&&p.edad<=t[2]).length}));
+  const mx=Math.max(1,...cE.map(c=>c.v));
+  bars($("g-edad"),cE.map(c=>({label:c.label,value:c.v,text:c.v+" ("+(n?Math.round(100*c.v/n):0)+" %)"})),mx);
+  $("n-edad").textContent=n?("Rango: "+Math.min(...edades)+" a "+Math.max(...edades)+" años."):"Sin personas.";
+  const todos=D.personas.length, cN=conteo(D.personas,"nivel",NIVELES);
+  bars($("g-nivel"),cN.map(c=>({label:CORTO(c.k),value:c.n,text:c.n+" ("+Math.round(100*c.n/todos)+" %)",color:c.k===nivel?"var(--b)":"var(--a)"})),Math.max(...cN.map(c=>c.n)));
+  const cT=conteo(rows,"tiempo_juego",TIEMPO);
+  bars($("g-tiempo"),cT.map(c=>({label:c.k,value:c.n,text:c.n+" ("+(n?Math.round(100*c.n/n):0)+" %)"})),Math.max(1,...cT.map(c=>c.n)));
+  $("n-tiempo").textContent="";
+  const cH=conteo(rows,"horas_semana",HORAS);
+  bars($("g-horas"),cH.map(c=>({label:c.k,value:c.n,text:c.n+" ("+(n?Math.round(100*c.n/n):0)+" %)"})),Math.max(1,...cH.map(c=>c.n)));
+  $("n-horas").textContent="";
+
+  const cP=POS.map(p=>({k:p,n:rows.filter(r=>r.posicion===p).length})).sort((a,b)=>b.n-a.n);
+  // líneas de referencia sobre el máximo de la gráfica
+  const maxP=Math.max(1,...cP.map(c=>c.n),n/7);
+  const base_n=n?Math.max(...cP.map(c=>c.n)):0;
+  bars($("g-pos"),cP.map(c=>({label:c.k,value:c.n,text:c.n+" ("+(n?(100*c.n/n).toFixed(1):0)+" %)",mark:n/7,mark2:base_n})),maxP*1.05);
+  $("n-pos").textContent=nivel==="Todos"?"Todas las personas.":"Solo nivel: "+CORTO(nivel)+".";
+  const todosP=POS.map(p=>D.personas.filter(r=>r.posicion===p).length);
+  $("txt-pos").innerHTML='<li>Con todas las personas, la posición más común tiene '+Math.max(...todosP)+' y la menos común '+Math.min(...todosP)+': el desbalance es moderado ('+(Math.max(...todosP)/Math.min(...todosP)).toFixed(1)+' a 1).</li>'
+    +'<li>Por eso evaluamos con el <b>F1 macro</b>, que da el mismo peso a cada posición, y con validación estratificada.</li>'
+    +'<li>Adivinar al azar acierta '+f1(S.azar_pct,1)+' %; siempre decir “'+POS[todosP.indexOf(Math.max(...todosP))]+'” acierta '+f1(S.base_aciertos_pct,1)+' %. Un modelo útil tiene que superar ese segundo número.</li>';
+
+  pintaPerfil(rows);
+}
+
+/* ---------- Características (dependen del filtro) ---------- */
+function pintaPerfil(rows){
+  const gen=HAB.map(h=>media(rows.map(p=>p[h.id]).filter(v=>v!=null)));
+  const desv=HAB.map(h=>sd(rows.map(p=>p[h.id]).filter(v=>v!=null)));
+  const de=rows.filter(p=>p.posicion===posSel);
+  $("sel-pos").innerHTML=POS.map(p=>'<button class="chip" data-p="'+esc(p)+'" aria-pressed="'+(p===posSel)+'">'+esc(p)+'</button>').join("");
+  document.querySelectorAll("button[data-p]").forEach(b=>b.addEventListener("click",()=>{posSel=b.dataset.p;pintaPerfil(filtradas());}));
+  if(!de.length){$("g-perfil").innerHTML='<p class="nota">No hay personas de esta posición en el nivel elegido.</p>';}
+  else bars($("g-perfil"),HAB.map((h,i)=>{const m=media(de.map(p=>p[h.id]).filter(v=>v!=null));return {label:h.nombre,value:m,text:m.toFixed(2),mark:gen[i]};}),5);
+  const filas=POS.map(p=>{const r=rows.filter(x=>x.posicion===p);return [p].concat(HAB.map((h,i)=>{
+    if(!r.length||!(desv[i]>0))return {t:"–"};
+    const z=(media(r.map(x=>x[h.id]).filter(v=>v!=null))-gen[i])/desv[i];
+    return {t:(z>=0?"+":"")+z.toFixed(1),s:mezcla(z>=0?"var(--pos)":"var(--neg)",Math.abs(z)/1.5*70)};}));});
+  tabla($("g-heat"),[{t:"Posición"}].concat(HAB.map(h=>({t:h.nombre,v:true}))),filas,"heat");
+}
+/* ---------- Secciones estáticas ---------- */
+function pintaEstatico(){
+  const c=D.banderas;
+  $("calidad").innerHTML=[
+   D.recibidas+" respuestas recibidas; "+D.personas.length+" válidas ("+f1(100*D.personas.length/D.recibidas,1)+" %).",
+   "Limpieza solo con Python: reglas y expresiones regulares, sin IA ni NLP. Cada paso queda en una bitácora.",
+   c.duplicado_posible+" respuestas idénticas a otra en las 18 preguntas ("+c.duplicado_repetida+" repetidas): se conservan marcadas y se probó el modelo con y sin ellas.",
+   c.menor_18+" menores de 18 años, "+c.edad_atipica+" edad atípica y "+c.linea_recta+" con la misma calificación en todas las habilidades: marcados, no eliminados.",
+   D.no_se_celdas+" casillas con “No sé / No puedo evaluarlo” en "+D.no_se_personas+" personas: se tratan como dato faltante y se rellenan con la mediana solo dentro de la validación."
+  ].map(t=>"<li>"+esc(t)+"</li>").join("");
+
+  bars($("g-sep"),D.separacion.map(s=>({label:s.habilidad,value:s.efecto,text:s.efecto.toFixed(2),color:"var(--b)"})),Math.max(...D.separacion.map(s=>s.efecto))*1.05);
+
+  const cn=D.correlaciones.nombres, cv=D.correlaciones.valores;
+  tabla($("g-corr"),[{t:""}].concat(cn.map(n=>({t:n,v:true}))),cv.map((fila,i)=>[cn[i]].concat(fila.map(v=>({t:v.toFixed(2),s:mezcla(v>=0?"var(--pos)":"var(--neg)",Math.abs(v)*85)})))),"heat");
+
+  /* modelos */
+  const ord=[...D.modelos].sort((a,b)=>b.f1_macro-a.f1_macro);
+  const nBase=D.modelos.filter(m=>!m.modelo.startsWith("Base")).length;
+  $("sub-modelos").textContent="Probamos "+nBase+" modelos más un modelo base, con validación cruzada estratificada (5 pliegues × 2 repeticiones) y búsqueda de hiperparámetros anidada. Elegimos con el F1 macro y con una regla de parsimonia fijada antes de ver los resultados: si varios quedan a menos de 0.01, se elige el más simple.";
+  bars($("g-modelos"),ord.map(m=>({label:m.modelo,value:m.f1_macro,err:m.f1_macro_desv,text:m.f1_macro.toFixed(3),color:m.modelo===S.mejor_modelo?"var(--a2)":(m.modelo.startsWith("Base")?"var(--mut)":"var(--a)")})),1);
+  tabla($("g-pca"),[{t:"Modelo"},{t:"Sin PCA"},{t:"Con PCA"},{t:"Diferencia"}],D.pca.map(p=>[p.modelo,p.f1_sin_pca.toFixed(3),p.f1_con_pca.toFixed(3),(p.diferencia>=0?"+":"")+p.diferencia.toFixed(3)]));
+  const mp=N(S.mejora_pca_f1);
+  $("txt-pca").textContent="PCA no cambia de forma apreciable el resultado (diferencia promedio "+(mp>=0?"+":"")+mp.toFixed(3)+") y haría más difícil explicar cada habilidad, así que no la usamos en el modelo final. Se probó, se comparó y se descartó con evidencia.";
+  const sh=D.variables.filter(v=>v.conjunto==="Solo habilidades"), ex=D.variables.filter(v=>v.conjunto!=="Solo habilidades");
+  const mj=N(S.mejora_experiencia_f1);
+  $("txt-vars").textContent="Agregar edad, tiempo jugando, horas y nivel cambia el F1 macro "+(mj>=0?"+":"")+mj.toFixed(3)+" en promedio (umbral para usarlas: +0.010). "+(S.conjunto_variables==="Solo habilidades"?"No ayuda, así que el modelo usa solo las 12 habilidades y la aplicación pide menos datos.":"Ayuda, así que se incluyeron.");
+
+  const DESC=[
+   ["Regresión logística","Suma el peso de cada habilidad para calcular qué tan probable es cada posición. Es el más fácil de explicar y de mantener; por eso gana cuando hay empate técnico."],
+   ["k vecinos (Nearest Neighbors)","Compara a la persona con las k más parecidas y vota. Es el algoritmo visto en clase y muy intuitivo, pero sufre cuando las habilidades se correlacionan."],
+   ["SVM","Busca fronteras suaves que separen las posiciones. Funciona bien con pocos datos, pero es más difícil de explicar y sus probabilidades se calibran aparte."],
+   ["Árbol de decisión","Hace preguntas de sí/no sobre las habilidades. Es muy interpretable, pero un solo árbol es inestable con ~270 personas."],
+   ["Bosque aleatorio","Muchos árboles que votan. Es más estable y capta relaciones no lineales; empató con la regresión logística, pero es menos transparente."],
+   ["Variantes con PCA","Los mismos modelos sobre componentes principales, para comparar con y sin PCA."],
+   ["Modelo base","Siempre responde la posición más común. Si un modelo no lo supera, no aprendió nada útil."]
+  ];
+  $("g-descr").innerHTML=DESC.map(d=>"<details><summary>"+esc(d[0])+"</summary><p>"+esc(d[1])+"</p></details>").join("");
+
+  /* resultados */
+  $("sub-res").textContent="Modelo elegido: "+S.mejor_modelo+". Estas cifras salen de personas que el modelo no vio al entrenar (validación cruzada anidada).";
+  $("kpis-res").innerHTML=[[pc(mm.aciertos,1),"aciertos (azar "+f1(S.azar_pct,1)+" %, base "+f1(S.base_aciertos_pct,1)+" %)"],[N(S.mejor_f1_macro).toFixed(2),"F1 macro (modelo base "+N(S.base_f1_macro).toFixed(2)+")"],[pc(mm.top2,1),"la posición real está entre las 2 primeras"],[pc(mm.aciertos_balanceados,1),"aciertos balanceados"]]
+   .map(k=>'<div class="card kpi"><b>'+k[0]+'</b><span>'+k[1]+'</span></div>').join("");
+  bars($("g-clase"),D.por_posicion.map(p=>({label:p.posicion,value:p.f1,text:"F1 "+p.f1.toFixed(2)})),1);
+  const imp=[...D.importancia].sort((a,b)=>b.importancia-a.importancia);
+  bars($("g-imp"),imp.map(p=>({label:p.variable,value:Math.max(0,p.importancia),text:p.importancia.toFixed(3),color:"var(--b)"})),Math.max(...imp.map(p=>p.importancia))*1.05);
+
+  const cf=D.confusion;
+  const filas=cf.map(f=>{const tot=POS.reduce((a,p)=>a+f[p],0);return [f.real].concat(POS.map(p=>({t:String(f[p]),s:mezcla("var(--a)",100*f[p]/tot*1.1)})));});
+  tabla($("g-conf"),[{t:"Real ↓ / Dijo →"}].concat(POS.map(p=>({t:p,v:true}))),filas,"heat");
+  const fuera=[];cf.forEach(f=>POS.forEach(p=>{if(p!==f.real)fuera.push([f.real,p,f[p]]);}));
+  fuera.sort((a,b)=>b[2]-a[2]);
+  $("txt-conf").innerHTML=fuera.slice(0,4).map(f=>"<li>"+esc(f[0])+" → "+esc(f[1])+": "+f[2]+" personas.</li>").join("")+"<li>Las confusiones se concentran entre posiciones vecinas (laterales, defensas y mediocampistas), que comparten habilidades.</li>";
+
+  tabla($("g-sens"),[{t:"Escenario"},{t:"Personas"},{t:"Aciertos"},{t:"F1 macro"}],D.sensibilidad.map(s=>[s.escenario.replace(/ \(.*\)/,""),s.personas,pc(s.aciertos,1),s.f1_macro.toFixed(3)]));
+  const fs=D.sensibilidad.map(s=>s.f1_macro),rango=Math.max(...fs)-Math.min(...fs);
+  const dsd=Math.max(...D.sensibilidad.map(s=>s.f1_macro_desv));
+  $("txt-sens").textContent="La diferencia máxima de F1 es "+rango.toFixed(3)+", menor que la variación entre pliegues (hasta "+dsd.toFixed(3)+"). Los casos marcados no cambian las conclusiones.";
+  const ece=N(S.ece);
+  $("txt-cal").textContent="Un modelo puede decir “Delantero, 70 %”, pero solo es útil si acierta cerca del 70 % cuando lo dice. Fijamos de antemano que solo mostraríamos porcentajes si el error de calibración (ECE) era de 0.08 o menos. Resultado: ECE = "+ece.toFixed(3)+". "+(S.mostrar_probabilidades==="True"?"Cumple, así que la aplicación muestra porcentajes.":"No cumple, así que la aplicación muestra la posición más probable y las siguientes sin porcentajes.");
+  tabla($("g-cal"),[{t:"Confianza del modelo"},{t:"Personas"},{t:"Confianza media"},{t:"Aciertos reales"}],D.calibracion.map(c=>[c.tramo,c.personas,pc(c.confianza_media,0),pc(c.aciertos_reales,0)]));
+  const k=D.kmeans, kk=k.find(x=>x.k===N(S.k_elegido_silueta))||k[0];
+  $("txt-km").textContent="Sin usar la posición, agrupamos a las personas por sus habilidades. Probamos de 2 a 10 grupos y elegimos el número con mayor silueta: k = "+S.k_elegido_silueta+" (silueta "+kk.silueta.toFixed(2)+"). Los grupos casi no coinciden con las posiciones (índice de Rand ajustado "+kk.rand_ajustado.toFixed(2)+"; con k = 7: "+N(S.rand_ajustado_k7).toFixed(2)+"). Las habilidades por sí solas no dibujan las siete posiciones; el modelo supervisado, que sí conoce la posición, es el que las distingue.";
+  bars($("g-km"),k.map(x=>({label:"k = "+x.k,value:Math.max(0,x.silueta),text:"silueta "+x.silueta.toFixed(2),color:x.k===N(S.k_elegido_silueta)?"var(--a2)":"var(--a)"})),0.5);
+
+  /* aplicación */
+  $("app-enlace").innerHTML=D.url_app
+   ?'<p style="margin:0 0 12px">Introduce tus habilidades y obtén la posición que el modelo considera más probable.</p><a class="boton" href="'+esc(D.url_app)+'" target="_blank" rel="noopener">Abrir la aplicación</a>'
+   :'<p style="margin:0">El enlace de la aplicación se agregará al publicarla.</p>';
+
+  const peor=[...D.por_posicion].sort((a,b)=>a.f1-b.f1), mejorP=[...D.por_posicion].sort((a,b)=>b.f1-a.f1);
+  $("concl").innerHTML=[
+   "Sí es posible predecir la posición habitual mejor que el azar: "+pc(mm.aciertos,0)+" de aciertos contra "+f1(S.azar_pct,1)+" % del azar y "+f1(S.base_aciertos_pct,1)+" % del modelo base.",
+   "Se detectan mejor "+mejorP[0].posicion.toLowerCase()+" (F1 "+mejorP[0].f1.toFixed(2)+") y "+mejorP[1].posicion.toLowerCase()+" ("+mejorP[1].f1.toFixed(2)+"); cuesta más "+peor[0].posicion.toLowerCase()+" ("+peor[0].f1.toFixed(2)+") y "+peor[1].posicion.toLowerCase()+" ("+peor[1].f1.toFixed(2)+").",
+   "Las habilidades que más separan las posiciones son "+D.separacion[0].habilidad.toLowerCase()+", "+D.separacion[1].habilidad.toLowerCase()+" y "+D.separacion[2].habilidad.toLowerCase()+".",
+   "Con varios modelos en empate técnico, elegimos el más simple y explicable. PCA y la experiencia no mejoraron el resultado.",
+   "La posición real está entre las dos primeras opciones del modelo el "+pc(mm.top2,0)+" de las veces."
+  ].map(t=>"<li>"+esc(t)+"</li>").join("");
+  $("limit").innerHTML=[
+   "Las habilidades son autoevaluaciones: cada persona se describe según la posición que juega (un portero se califica alto en reflejos por ser portero). El modelo aprende percepciones, no habilidades medidas.",
+   "La muestra incluye jugadores de cualquier nivel, sobre todo recreativos ("+pc(D.personas.filter(p=>p.nivel==="Recreativo (por diversión)").length/D.personas.length,0)+"): no se puede generalizar a futbolistas profesionales.",
+   "Solo hay "+D.personas.filter(p=>p.nivel==="Profesional").length+" profesionales, y las personas respondieron el formulario de forma voluntaria (no es una muestra aleatoria).",
+   "Las probabilidades del modelo no están bien calibradas, por eso no se muestran porcentajes.",
+   "Es una herramienta exploratoria, no un diagnóstico ni una herramienta de selección de jugadores."
+  ].map(t=>"<li>"+esc(t)+"</li>").join("");
+}
+
+pintaEstatico();
+pintaFiltro();
+pintaFiltrado();
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aplicación · ¿En qué posición juegas?</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#14231b;--mut:#51615a;--line:#dbe4df;--a:#1d8a4b;--a2:#0f5e32;--b:#c9821a;--ref:#b23a48;
+color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1511;--card:#16211b;--ink:#e6f0ea;--mut:#9db1a7;--line:#27372f;--a:#4fc17f;--a2:#8ee0ae;--b:#e8a547;--ref:#ee7f8d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--a2)}
+header.top{border-bottom:1px solid var(--line)}
+header.top div{max-width:900px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+main{max-width:900px;margin:0 auto;padding:22px 16px 48px}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.12;margin:6px 0 10px;letter-spacing:-.02em;max-width:22ch}
+h2{font-size:20px;margin:0 0 4px}
+h3{font-size:15px;margin:0 0 4px}
+.sub{color:var(--mut);max-width:64ch;margin:0 0 18px}
+.nota{color:var(--mut);font-size:14px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 4px}
+.chips>span{color:var(--mut);font-size:14px}
+button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--a)}
+button.principal{background:var(--a2);color:var(--bg);border-color:var(--a2);font-weight:600;font-size:16px;padding:10px 24px}
+button.principal:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,.seg input:focus-visible+label,summary:focus-visible,a:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+fieldset{border:0;padding:0;margin:0 0 6px;min-width:0}
+legend{font-weight:600;font-size:15px;padding:0;margin:0 0 6px}
+.hab{display:grid;grid-template-columns:minmax(120px,30%) 1fr;gap:6px 12px;align-items:center;padding:7px 0;border-top:1px solid var(--line)}
+.hab:first-of-type{border-top:0}
+.hab .et{font-size:15px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label{min-width:40px;text-align:center;padding:5px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer;font-size:14px;font-variant-numeric:tabular-nums;background:var(--card);user-select:none}
+.seg label.ns{color:var(--mut);font-size:13px}
+.seg input:checked+label{background:var(--a2);color:var(--bg);border-color:var(--a2);font-weight:600}
+.escala{font-size:13px;color:var(--mut);margin:0 0 6px}
+.acciones{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+#falta{color:var(--mut);font-size:14px}
+#resultado{outline:none}
+#resultado[hidden]{display:none}
+.pos{font-size:clamp(26px,5vw,36px);font-weight:700;line-height:1.15;margin:2px 0 6px;color:var(--a2)}
+ol.rank{margin:6px 0 10px;padding-left:22px}
+ol.rank li{margin:3px 0}
+ul.lista{margin:4px 0 10px;padding-left:18px;color:var(--mut);font-size:14px}
+ul.lista li{margin:4px 0}
+.aviso{border-left:4px solid var(--ref)}
+.exito{border-left:4px solid var(--a)}
+details{border-top:1px solid var(--line);padding:8px 0}
+details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:600;font-size:14px}
+details p,details ul{margin:6px 0 2px;color:var(--mut);font-size:14px}
+footer{color:var(--mut);font-size:13px;margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:560px){.hab{grid-template-columns:1fr}.card{padding:14px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div><a href="index.html">← Tablero analítico</a><span>Proyecto de Sistemas Inteligentes · UNAM</span></div></header>
+<main>
+<h1>¿En qué posición juegas? Pruébalo</h1>
+<p class="sub" id="intro"></p>
+
+<div class="card">
+<div class="chips" id="ejemplos" role="group" aria-label="Cargar un ejemplo"></div>
+<p class="nota" style="margin-top:6px">Los ejemplos son el perfil promedio de cada posición en nuestros datos, redondeado a números enteros. Sirven para ver cómo responde el modelo.</p>
+</div>
+
+<form id="forma" class="card" novalidate>
+<h2>Tus habilidades</h2>
+<p class="escala">Califícate como en el formulario: <b>1</b> = muy bajo · <b>2</b> = bajo · <b>3</b> = medio · <b>4</b> = alto · <b>5</b> = muy alto. Si no puedes evaluarte, marca «No sé».</p>
+<div id="campos"></div>
+<div class="acciones">
+<button type="submit" class="principal" id="ver" disabled>Ver mi posición</button>
+<button type="button" id="limpiar">Limpiar</button>
+<span id="falta" aria-live="polite"></span>
+</div>
+</form>
+
+<section id="resultado" class="card exito" tabindex="-1" aria-live="polite" hidden></section>
+
+<div class="card aviso">
+<h2>Qué tan confiable es</h2>
+<ul class="lista" id="confiable"></ul>
+</div>
+
+<div class="card">
+<h2>Cómo funciona</h2>
+<details><summary>¿Qué modelo se usa?</summary><p id="t-modelo"></p></details>
+<details><summary>¿Qué pasa si marco «No sé»?</summary><p>Se usa el valor típico (la mediana) de las personas que respondieron el formulario, igual que al entrenar el modelo. Si marcas «No sé» en muchas habilidades, el resultado se vuelve menos informativo.</p></details>
+<details><summary>¿Se guardan mis respuestas?</summary><p>No. El cálculo se hace en tu navegador; esta página no envía ni guarda lo que marcas.</p></details>
+<details><summary>Limitaciones</summary>
+<ul>
+<li>Las habilidades son autoevaluaciones: cada persona se describe según la posición que juega.</li>
+<li>El modelo se entrenó con una muestra de jugadores de cualquier nivel, sobre todo recreativos; no se puede generalizar a futbolistas profesionales.</li>
+<li>Predice la posición que se <b>juega habitualmente</b>, no la posición ideal ni la que «deberías» jugar.</li>
+<li>Es una herramienta exploratoria de un proyecto escolar, no un diagnóstico ni una herramienta de selección de jugadores.</li>
+</ul></details>
+</div>
+
+<footer>Las cifras de esta página salen de los archivos del proyecto (cuadernos 01 a 04). El modelo se exportó a números (<code>modelo_app.json</code>) para que funcione sin servidor y sin depender de la versión de ninguna librería.</footer>
+</main>
+
+<script>
+const P={"clases": ["Defensa central", "Delantero", "Extremo", "Lateral", "Mediocampista defensivo", "Mediocampista ofensivo", "Portero"], "columnas": ["velocidad", "resistencia", "fuerza", "control_balon", "regate", "pase", "definicion", "defensa", "juego_aereo", "vision_juego", "reflejos", "posicionamiento"], "nombres": ["Velocidad", "Resistencia física", "Fuerza física", "Control del balón", "Capacidad de regate", "Precisión de pase", "Definición o remate", "Capacidad defensiva", "Juego aéreo", "Visión de juego", "Reflejos", "Posicionamiento táctico"], "mediana": [3.0, 3.0, 3.0, 3.0, 3.0, 4.0, 3.0, 3.0, 3.0, 4.0, 3.0, 4.0], "media": [3.3161764705882355, 3.363970588235294, 3.2904411764705883, 3.3786764705882355, 2.900735294117647, 3.5845588235294117, 2.8088235294117645, 3.2279411764705883, 3.073529411764706, 3.625, 3.4411764705882355, 3.7058823529411766], "escala": [1.0339971404724435, 1.027144298966632, 0.8745905492816245, 0.861761882649461, 1.1477597311802812, 0.9355227130004874, 1.1505414702393324, 1.077626147690771, 1.0155580394482087, 0.9230504096871034, 0.783700740851425, 0.9672402148473734], "coef": [[-0.22170932395153897, -0.26127313458064005, 0.2626441118130755, -0.3605597639155582, -0.3049254064098396, -0.2536455364070617, -0.1992757794293144, 0.359233980204713, 0.9825676926088206, -0.17362544012034806, -0.47135567853345967, 0.06394297667393421], [0.0014093223923653882, -0.19293199562432534, 0.1923381981439221, -0.024981427743373724, -0.037148459650779536, -0.2373323621077924, 0.8859755196759074, -0.794431492219189, 0.2123844314533628, -0.05273997644991371, 0.0941833292281352, -0.04907785160939143], [0.8334060461842612, 0.08355737213326492, -0.019730360555753338, 0.2257967936370875, 0.7240769082113505, -0.202818927869286, 0.13877897606788953, -0.1998996763564441, -0.551855029817162, -0.15557390027558363, 0.23848291883641248, -0.30121712352929625], [0.295138966347381, 0.08141837491053054, -0.10859001729257914, -0.1574656815835475, 0.24098316102893041, -0.03004932963912095, -0.4992411001838302, 0.5508600077539294, -0.280415540794848, -0.22110254447804234, -0.30879663859822953, 0.11814555800193972], [-0.3647103582934167, 0.2781089114777787, -0.029303030750131947, 0.21671247752760703, -0.29196183760738964, 0.4472060123953473, -0.1247650219258602, 0.3413107930270268, -0.14740866943349035, 0.3190995388752152, -0.2287081969474665, 0.15151367624995635], [-0.03991958879534926, -0.0297252672369849, -0.29861179074069494, 0.24229242664049894, 0.22755056823810005, 0.6221818751270994, 0.21199442187636927, -0.24089228475395988, -0.407350266761274, 0.27108998816307606, -0.2150358861608753, -0.0829898901678453], [-0.503615063883703, 0.04084573892037615, 0.0012528893821618465, -0.1417948245627142, -0.5585749338103718, -0.3455417314991858, -0.41346701608116176, -0.016181327656076303, 0.19207738274459113, 0.012852334285596448, 0.8912301521754836, 0.09968265438070288]], "intercepto": [0.25266873693368463, 0.14729860712366766, -0.9795951862418443, 0.5264747250937761, 0.33292082016809055, 0.09735075433611494, -0.3771184574134911], "mostrar_probabilidades": false, "personas_entrenamiento": 272, "metricas": {"aciertos_pct": 68.4, "top2_pct": 82.7, "azar_pct": 14.3, "base_aciertos_pct": 19.5}, "ejemplos": {"Portero": [2, 3, 3, 3, 2, 3, 2, 3, 3, 3, 4, 4], "Defensa central": [3, 3, 4, 3, 2, 3, 2, 4, 4, 3, 3, 4], "Lateral": [4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 3, 4], "Mediocampista defensivo": [3, 4, 4, 4, 3, 4, 3, 4, 3, 4, 3, 4], "Mediocampista ofensivo": [3, 3, 3, 4, 4, 4, 3, 3, 2, 4, 3, 4], "Extremo": [5, 4, 3, 4, 5, 3, 4, 3, 2, 4, 4, 3], "Delantero": [4, 3, 3, 3, 3, 3, 4, 2, 3, 3, 4, 3]}};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const GRUPOS=[
+ ["Físicas",["velocidad","resistencia","fuerza"]],
+ ["Técnicas",["control_balon","regate","pase","definicion"]],
+ ["Defensivas y de portería",["defensa","juego_aereo","reflejos"]],
+ ["Tácticas",["vision_juego","posicionamiento"]]
+];
+const NOMBRE={};P.columnas.forEach((id,j)=>NOMBRE[id]=P.nombres[j]);
+const N=P.columnas.length;
+let yaMostrado=false;
+
+/* ---- El modelo: los mismos pasos que la tubería de scikit-learn ---- */
+function predecir(x){
+  // 1) "No sé" (null) -> mediana de entrenamiento; 2) estandarizar; 3) regresión logística multinomial (softmax).
+  const z=x.map((v,j)=>((v==null?P.mediana[j]:v)-P.media[j])/P.escala[j]);
+  const l=P.coef.map((fila,c)=>fila.reduce((s,w,j)=>s+w*z[j],0)+P.intercepto[c]);
+  const m=Math.max(...l), e=l.map(v=>Math.exp(v-m)), s=e.reduce((a,b)=>a+b,0);
+  return {z:z, proba:e.map(v=>v/s)};
+}
+window.predecir=predecir; // se expone para poder probarla
+
+/* ---- Formulario ---- */
+function construye(){
+  let html="";
+  GRUPOS.forEach(([titulo,ids])=>{
+    html+='<fieldset><legend>'+esc(titulo)+'</legend>';
+    ids.forEach(id=>{
+      const nombre=esc(NOMBRE[id]);
+      html+='<div class="hab" role="radiogroup" aria-label="'+nombre+'"><span class="et">'+nombre+'</span><div class="seg">';
+      [1,2,3,4,5,"ns"].forEach(v=>{
+        const idc=id+"-"+v;
+        html+='<input type="radio" name="'+id+'" id="'+idc+'" value="'+v+'"><label for="'+idc+'" class="'+(v==="ns"?"ns":"")+'">'+(v==="ns"?"No sé":v)+'</label>';
+      });
+      html+='</div></div>';
+    });
+    html+='</fieldset>';
+  });
+  $("campos").innerHTML=html;
+}
+function leer(){
+  return P.columnas.map(id=>{
+    const r=document.querySelector('input[name="'+id+'"]:checked');
+    if(!r) return undefined;
+    return r.value==="ns"?null:Number(r.value);
+  });
+}
+function actualiza(){
+  const x=leer(), faltan=x.filter(v=>v===undefined).length;
+  $("ver").disabled=faltan>0;
+  $("falta").textContent=faltan>0?("Faltan "+faltan+" de "+N+" por responder."):"Listo para predecir.";
+  if(faltan===0&&yaMostrado) muestra();
+}
+
+/* ---- Resultado ---- */
+function explica(x,z,c){
+  const K=P.clases.length, a=[];
+  x.forEach((v,j)=>{
+    if(v==null) return;
+    const mediaCoef=P.coef.reduce((s,f)=>s+f[j],0)/K;
+    a.push({j:j,aporte:z[j]*(P.coef[c][j]-mediaCoef)});
+  });
+  a.sort((p,q)=>q.aporte-p.aporte);
+  return {favor:a.filter(t=>t.aporte>0.05).slice(0,3), contra:a.filter(t=>t.aporte<-0.05).reverse().slice(0,2)};
+}
+function muestra(){
+  const x=leer();
+  if(x.some(v=>v===undefined)) return;
+  const r=predecir(x);
+  const orden=r.proba.map((p,i)=>[p,i]).sort((a,b)=>b[0]-a[0]);
+  const top=orden[0][1], ex=explica(x,r.z,top);
+  const frase=t=>esc(NOMBRE[P.columnas[t.j]])+" (calificaste "+x[t.j]+")";
+  let h='<h2>Posición más probable</h2><p class="pos">'+esc(P.clases[top])+'</p>';
+  h+='<h3>Las tres posiciones que el modelo considera más probables</h3><ol class="rank">';
+  orden.slice(0,3).forEach(([p,i])=>{
+    h+='<li>'+esc(P.clases[i])+(P.mostrar_probabilidades?' — '+(100*p).toFixed(0)+' %':'')+'</li>';
+  });
+  h+='</ol>';
+  if(!P.mostrar_probabilidades){
+    h+='<p class="nota">No mostramos porcentajes porque, al medirlos, no eran confiables (el modelo no estaba bien calibrado). Solo importa el orden.</p>';
+  }
+  h+='<h3>Qué pesó más en este resultado</h3><ul class="lista">';
+  h+=ex.favor.length?'<li><b>A favor de '+esc(P.clases[top])+':</b> '+ex.favor.map(frase).join(", ")+'.</li>':'<li>Ninguna habilidad destaca claramente a favor.</li>';
+  if(ex.contra.length) h+='<li><b>En contra:</b> '+ex.contra.map(frase).join(", ")+'.</li>';
+  h+='</ul><p class="nota">Se compara cada habilidad con el promedio de las siete posiciones. Una calificación baja también puede pesar a favor (por ejemplo, reflejos bajos descartan al portero). No es causalidad: es cómo se relacionan tus respuestas con los patrones que aprendió el modelo.</p>';
+  $("resultado").innerHTML=h;
+  $("resultado").hidden=false;
+}
+
+/* ---- Textos con cifras del proyecto ---- */
+function textos(){
+  const m=P.metricas;
+  $("intro").textContent="Califica tus 12 habilidades como lo hiciste en el formulario y el modelo te dirá qué posición considera más probable. Fue entrenado con "+P.personas_entrenamiento+" respuestas reales.";
+  $("confiable").innerHTML=[
+    "En pruebas con personas que no vio al entrenar, acierta la posición en "+m.aciertos_pct.toFixed(0)+" de cada 100 casos. Adivinar al azar acertaría "+m.azar_pct.toFixed(0)+" y responder siempre la posición más común, "+m.base_aciertos_pct.toFixed(1)+".",
+    "La posición real está entre sus dos primeras opciones el "+m.top2_pct.toFixed(0)+" % de las veces.",
+    "Se equivoca más entre posiciones parecidas (laterales, defensas y mediocampistas). Por eso se muestran las tres más probables.",
+    "Es una autoevaluación: el modelo aprende cómo se describen las personas, no mide habilidades reales."
+  ].map(t=>"<li>"+esc(t)+"</li>").join("");
+  $("t-modelo").textContent="Una regresión logística: suma el peso de cada habilidad (ya estandarizada) para calcular qué tan probable es cada una de las siete posiciones y elige la mayor. Se eligió entre ocho modelos con una regla fijada de antemano: si varios empataban en desempeño, el más simple y fácil de explicar. Los detalles están en el documento técnico y en el tablero.";
+}
+
+/* ---- Ejemplos ---- */
+function ejemplos(){
+  $("ejemplos").innerHTML='<span>Cargar un ejemplo:</span>'+Object.keys(P.ejemplos).map(p=>'<button type="button" data-p="'+esc(p)+'">'+esc(p)+'</button>').join("");
+  document.querySelectorAll("button[data-p]").forEach(b=>b.addEventListener("click",()=>{
+    const v=P.ejemplos[b.dataset.p];
+    P.columnas.forEach((id,j)=>{ $(id+"-"+v[j]).checked=true; });
+    yaMostrado=true; actualiza(); muestra();
+    $("resultado").scrollIntoView({block:"nearest"});
+  }));
+}
+
+construye(); textos(); ejemplos(); actualiza();
+$("forma").addEventListener("change",actualiza);
+$("forma").addEventListener("submit",ev=>{
+  ev.preventDefault();
+  yaMostrado=true; muestra();
+  $("resultado").scrollIntoView({block:"nearest"});
+  $("resultado").focus({preventScroll:true});
+});
+$("limpiar").addEventListener("click",()=>{
+  document.querySelectorAll('#campos input[type="radio"]').forEach(r=>{r.checked=false;});
+  yaMostrado=false; $("resultado").hidden=true; actualiza();
+});
+</script>
+</body>
+</html>
