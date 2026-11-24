@@ -1,0 +1,9 @@
+﻿conjunto,modelo,f1_macro,aciertos
+Solo habilidades,k vecinos (k = 7),0.624753560194807,0.6250280583613917
+Solo habilidades,Regresión logística (C = 1),0.6657290876109982,0.6651851851851852
+Solo habilidades,SVM (C = 1),0.651806417343963,0.6456565656565657
+Solo habilidades,Bosque aleatorio (prof. 6),0.6807727298596159,0.6727272727272727
+Habilidades + experiencia,k vecinos (k = 7),0.6182549338223817,0.6188776655443322
+Habilidades + experiencia,Regresión logística (C = 1),0.6546077103894922,0.6530415263748598
+Habilidades + experiencia,SVM (C = 1),0.6504098316899886,0.6532210998877667
+Habilidades + experiencia,Bosque aleatorio (prof. 6),0.6827879135474083,0.6824466891133557

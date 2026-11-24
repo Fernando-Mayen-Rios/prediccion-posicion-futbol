@@ -1,0 +1,24 @@
+﻿concepto,valor
+personas,272
+posiciones,7
+azar_pct,14.3
+base_aciertos_pct,19.5
+base_f1_macro,0.0466
+conjunto_variables,Solo habilidades
+mejor_modelo,Regresión logística
+modelo_mayor_f1,Bosque aleatorio
+mejor_aciertos_pct,68.4
+mejor_aciertos_balanceados_pct,68.9
+mejor_f1_macro,0.6878
+mejor_f1_macro_desv,0.0571
+mejor_top2_pct,82.7
+ece,0.172
+mostrar_probabilidades,False
+mejora_experiencia_f1,-0.0043
+mejora_pca_f1,-0.0033
+k_elegido_silueta,2
+silueta_k_elegido,0.2235
+rand_ajustado_k_elegido,0.0325
+rand_ajustado_k7,0.1206
+nmi_k7,0.2488
+version_scikit_learn,1.6.1
