@@ -1,0 +1,92 @@
+{
+  "titulo": "Predicción de la posición habitual de un jugador de fútbol",
+  "modelo": "Regresión logística",
+  "hiperparametros": {
+    "modelo__C": 0.1
+  },
+  "conjunto_variables": "Solo habilidades",
+  "columnas_entrada": [
+    "velocidad",
+    "resistencia",
+    "fuerza",
+    "control_balon",
+    "regate",
+    "pase",
+    "definicion",
+    "defensa",
+    "juego_aereo",
+    "vision_juego",
+    "reflejos",
+    "posicionamiento"
+  ],
+  "columnas_numericas": [
+    "velocidad",
+    "resistencia",
+    "fuerza",
+    "control_balon",
+    "regate",
+    "pase",
+    "definicion",
+    "defensa",
+    "juego_aereo",
+    "vision_juego",
+    "reflejos",
+    "posicionamiento"
+  ],
+  "columnas_categoricas": [],
+  "clases": [
+    "Defensa central",
+    "Delantero",
+    "Extremo",
+    "Lateral",
+    "Mediocampista defensivo",
+    "Mediocampista ofensivo",
+    "Portero"
+  ],
+  "personas_entrenamiento": 272,
+  "validacion": "Validación cruzada estratificada 5x2 con búsqueda de hiperparámetros anidada (3 pliegues)",
+  "metricas_validacion": {
+    "aciertos": 0.6841,
+    "aciertos_balanceados": 0.6885,
+    "f1_macro": 0.6878,
+    "top2": 0.8274,
+    "base_aciertos": 0.1949,
+    "azar": 0.1429
+  },
+  "ece": 0.172,
+  "umbral_ece": 0.08,
+  "mostrar_probabilidades": false,
+  "opciones": {
+    "habilidad_minimo": 1,
+    "habilidad_maximo": 5,
+    "nivel": [
+      "Escolar",
+      "Recreativo (por diversión)",
+      "Amateur en un equipo organizado",
+      "Competitivo o semiprofesional",
+      "Profesional"
+    ],
+    "tiempo_juego": [
+      "Menos de 1 año",
+      "De 1 a 2 años",
+      "De 3 a 5 años",
+      "De 6 a 10 años",
+      "Más de 10 años"
+    ],
+    "horas_semana": [
+      "Actualmente, ninguna",
+      "De 1 a 2 horas",
+      "De 3 a 5 horas",
+      "De 6 a 8 horas",
+      "De 9 a 12 horas",
+      "Más de 12 horas"
+    ]
+  },
+  "versiones": {
+    "python": "3.13.18",
+    "scikit_learn": "1.6.1",
+    "pandas": "2.2.3",
+    "numpy": "2.4.6",
+    "joblib": "1.6.0"
+  }
+}
