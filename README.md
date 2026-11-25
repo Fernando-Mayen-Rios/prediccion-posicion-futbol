@@ -2,7 +2,12 @@
 
 Proyecto final de **Sistemas Inteligentes** · UNAM · Noviembre de 2026
 
-**Integrantes:** [NOMBRE COMPLETO 1], [NOMBRE COMPLETO 2], [NOMBRE COMPLETO 3], [NOMBRE COMPLETO 4], [NOMBRE COMPLETO 5]
+**Integrantes:** 
+- Chávez Ramírez Iker David 
+- Mayen Rios Fernando 
+- Rangel Sosa Oscar Yardel 
+- Sanchez Lopez Miguel Angel 
+- Torres Montes Sharon Danae
 
 ## Enlaces
 | Qué | Enlace |
@@ -129,7 +134,7 @@ python generador/generar_tablero.py --url-app aplicacion.html
 El formulario no pidió nombre, correo ni teléfono, y la marca de tiempo no se usa en el análisis. La aplicación web calcula todo en el navegador y no envía ni guarda lo que se escribe.
 
 ## 6. Uso de inteligencia artificial (declaración)
-Se utilizó Claude (Anthropic), un asistente de inteligencia artificial, como herramienta de apoyo. Lo usamos sobre todo para (1) construir la aplicación web, (2) escribir el código que genera el tablero, (3) documentar y comentar los cuadernos, y (4) apoyarnos en la revisión del código y en la redacción de los documentos y de la guía de exposición. El equipo definió el problema, diseñó y aplicó el formulario, tomó las decisiones del proyecto, ejecutó los cuadernos en Google Colab, revisó los resultados y puede explicar cada parte del trabajo. Las cifras reportadas son las que obtuvimos en Colab. La limpieza de datos se hizo con reglas y expresiones regulares, sin IA ni NLP.
+Se utilizó Claude (Anthropic), un asistente de inteligencia artificial, como herramienta de apoyo. Lo usamos sobre todo para (1) construir la aplicación web, (2) escribir el código que genera el tablero, (3) documentar y comentar los cuadernos, y (4) apoyarnos en la revisión del código. El equipo definió el problema, diseñó y aplicó el formulario, tomó las decisiones del proyecto, ejecutó los cuadernos en Google Colab y revisó los resultados. Las cifras reportadas son las que obtuvimos en Colab. La limpieza de datos se hizo con reglas y expresiones regulares, sin IA ni NLP.
 
 ## 7. Sistema experto
 Se consideró solo como antecedente conceptual; no se integró con el modelo de aprendizaje automático.
