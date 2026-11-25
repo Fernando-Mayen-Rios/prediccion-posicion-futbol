@@ -1,7 +1,0 @@
-# Versiones usadas en Google Colab al ejecutar los cuadernos (Python 3.13.18)
-pandas==2.2.3
-numpy==2.4.6
-scikit-learn==1.6.1
-scipy==1.16.3
-matplotlib==3.10.0
-joblib==1.6.0
