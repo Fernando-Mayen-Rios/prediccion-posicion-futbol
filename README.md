@@ -66,6 +66,7 @@ Proyecto final de **Sistemas Inteligentes** · UNAM · Noviembre de 2026
 | `resultados_modelado/` | Salidas del cuaderno 03 (CSV, `modelo_posicion.joblib`, `modelo_metadata.json`) y `modelo_app.json` |
 | `docs/` | Tablero (`index.html`) y aplicación (`aplicacion.html`), publicados con GitHub Pages |
 | `generador/` | Scripts que exportan el modelo y generan el tablero y la aplicación |
+| `antecedente_sistema_experto/` | Antecedente conceptual: sistema experto previo basado en reglas y pesos definidos por personas. No se usa en el modelo de predicción |
 | `requirements.txt` | Versiones exactas de las librerías |
 | `Documento_Tecnico.docx`, `Documento_Negocio.docx` | Documentos del proyecto |
 
