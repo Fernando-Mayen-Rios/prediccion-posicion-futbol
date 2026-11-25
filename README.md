@@ -138,4 +138,4 @@ El formulario no pidió nombre, correo ni teléfono, y la marca de tiempo no se 
 Se utilizó Claude (Anthropic), un asistente de inteligencia artificial, como herramienta de apoyo. Lo usamos sobre todo para (1) construir la aplicación web, (2) escribir el código que genera el tablero, (3) documentar y comentar los cuadernos, y (4) apoyarnos en la revisión del código. El equipo definió el problema, diseñó y aplicó el formulario, tomó las decisiones del proyecto, ejecutó los cuadernos en Google Colab y revisó los resultados. Las cifras reportadas son las que obtuvimos en Colab. La limpieza de datos se hizo con reglas y expresiones regulares, sin IA ni NLP.
 
 ## 7. Sistema experto
-Se consideró solo como antecedente conceptual; no se integró con el modelo de aprendizaje automático.
+Se consideró solo como antecedente conceptual y está en la carpeta `antecedente_sistema_experto/`. Funciona con reglas y pesos definidos por personas; no se integró con el modelo de aprendizaje automático, que aprende sus pesos a partir de los datos.
